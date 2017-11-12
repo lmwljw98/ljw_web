@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소 - 카카오톡 분석기</title>
+ <style type="text/css">
+       #crimson{
+           color:white;background-color:crimson;
+           width:500px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    #cadetblue{
+           color:white;background-color:cadetblue;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+      #cornflowerblue{
+           color:white;background-color:cornflowerblue;
+           width:500px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+    
+</head>
+<body>
+
+<center>
+
+<p><br></p>
+<p><br></p>
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>LJW Storage</font></a>
+</p>
+<br>
+<font color=#00ccc0 size=5 face="나눔명조"><b>카카오톡 대화 분석기</b></font>
+<br><br>
+<font color=#c41616 size=3 face="고딕체"><b>파일 업로드 성공</b></font>
+<br><br>
+
+{% for s in one %}
+{% for a in start %}
+
+<font color=#000000 size=5 face="고딕체">
+<b>{{ a }}로부터 기록된 자료 분석 결과,<br>
+<font color=#c41616 size=7>" {{ s }} "</font>
+<font color=#000000><br>님이 단톡방에서 가장 말이 많습니다.</b>
+</font></font>
+
+{% endfor %}
+{% endfor %}
+
+<br><br>
+
+{% for s in list %}
+      
+    <p id="cornflowerblue">
+    <a style="text-decoration:none;"><font color=#ffffff size=5 face="고딕체">{{ s }}</font></a>
+    </p>
+
+{% endfor %}
+
+<br><br>
+<p id="aqua">
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f size=5 face="고딕체">돌아가기</font></a>
+</p>
+
+</center>
+</body>
+</html>

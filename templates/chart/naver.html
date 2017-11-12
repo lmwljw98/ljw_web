@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소 - 실시간 차트</title>
+ <style type="text/css">
+       #aquamarine{
+           color:black;background-color:aquamarine;
+           width:400px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+     #cadetblue{
+           color:white;background-color:cadetblue;
+           width:500px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+    
+</head>
+
+<body>
+
+<center>
+
+<p><br></p>
+<p><br></p>
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>LJW Storage</font></a>
+</p>
+<br>
+<font color=#00ccc0 size=5 face="나눔명조"><b>실시간 차트 집계</b></font>
+<br><br>
+
+<br>
+
+<p id="aqua">
+    <font size=5 face="나눔명조">NAVER 실시간 검색어</font>
+</p>
+
+{% for s in rank %}
+    
+    <p id="aquamarine" >
+     
+    <a>
+    <font size=4 face="고딕체">{{ s.naver_rank }}</font>
+    </a>
+
+    </p>
+
+{% endfor %}
+</div>
+
+
+
+</center>
+</body>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소 - 짤 저장소</title>
+<style type="text/css">
+       #crimson{
+           color:white;background-color:crimson;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+        #cadetblue{
+           color:white;background-color:cadetblue;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+     #dimgray{
+           color:white;background-color:dimgrey;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    #aliceblue{
+           color:white;background-color:aliceblue;
+           width:600px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+</head>
+    
+<body link="white" vlink="white" alink="white">
+
+<center>
+
+<p><br></p>
+<p><br></p>
+
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>LJW Storage</font></a>
+</p>
+<br>
+<font color=#00ccc0 size=5 face="나눔명조"><b>관리자 짤 저장소</b></font>
+<br><br>
+<font color=#c41616 size=3 face="고딕체"><b>For Django, HTML Test</b></font>
+<p><br></p>
+  
+<div>
+        <form method="POST">
+           {% csrf_token %}
+            {{ form.start }}번째 ~ {{ form.end }}번째 <br>사진 보기
+            <br><br>
+            <button type="submit" name="NEXT">GO</button>
+        </form>
+</div>
+
+
+{% for s in my_photo %}
+      
+       <br>
+       <img src={{ s.source }}>
+       <br>
+        <p id="aliceblue" ><font color=#0f0f0f face="verdana" size=6>{{ s.text }}</font></p>
+       <br>
+   
+{% endfor %}
+
+</center>
+</body>
+</html>

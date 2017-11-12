@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소 - IP 정보</title>
+ <style type="text/css">
+       #crimson{
+           color:white;background-color:crimson;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+     #cadetblue{
+           color:white;background-color:cadetblue;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+    
+</head>
+
+<body>
+
+<center>
+
+<p><br></p>
+<p><br></p>
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>LJW Storage</font></a>
+</p>
+<br>
+       <br>
+       IP Address : {{ ip }}
+       <br>
+       Country Code : {{ c_c }}
+       <br>
+       Country Name : {{ c_n }}
+       <br>
+       Region Code : {{ r_c }}
+       <br>
+       Region Name : {{ r_n }}
+       <br>
+       City : {{ city }}
+       <br>
+       ZIP Code : {{ z_c }}
+       <br>
+       Time Zone : {{ t_z }}
+       <br>
+       Latitude : {{ la }}
+       <br>
+       Longitude : {{ long }}
+       <br>
+       Metro Code : {{ m_c }}
+       <br>
+ <p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'geoip' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>다시 입력하기</font></a>
+</p>
+  
+</center>
+</body>

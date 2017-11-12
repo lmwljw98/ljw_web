@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소 - 크롤링</title>
+ <style type="text/css">
+       #crimson{
+           color:white;background-color:crimson;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+     #cadetblue{
+           color:white;background-color:cadetblue;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+    
+</head>
+
+<body>
+
+<center>
+
+<p><br></p>
+<p><br></p>
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>LJW Storage</font></a>
+</p>
+<br>
+<font color=#00ccc0 size=5 face="나눔명조"><b>DCInside 개념글 사진 크롤링</b></font>
+<br><br>
+<font color=#c41616 size=3 face="고딕체"><b>갤러리 코드명과 페이지를 입력하세요.</b></font>
+<br><br>
+<font color=#50de90 size=3 face="고딕체"><b>Default Setting : 김소혜 갤러리 개념글 1페이지</b></font>
+<br><br>
+<br>
+
+<p id="cadetblue" >
+<a style="text-decoration:none;" href="{% url 'photo' %}" target="_self"><font color=#0f0f0f size=5 face="고딕체">돌아가기</font></a>
+</p>
+
+<p>
+   
+    <br>
+    <font color=#c41616 size=3 face="고딕체"><b>해당 페이지의 모든 글을 불러왔습니다.<br></b></font>
+    
+</p>
+{% for s in list %}
+      
+       <br>
+       <img src={{ s.img }}>
+       <br>
+   
+{% endfor %}
+        
+</center>
+</body>

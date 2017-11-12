@@ -1,0 +1,8 @@
+myvenv
+.fonts
+phantomjs.exe
+ghostdriver.log
+nohup.out
+db.sqlite3
+static/
+tweet/
