@@ -19,6 +19,13 @@
     }
 </style>
 
+<script>
+    $(document).ready(function () {
+        $('.my-thumb-2').nailthumb({
+            replaceAnimation: 'animate',
+        });
+    });
+</script>
 
 <body>
 <center>
@@ -46,11 +53,6 @@
             $("body").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
             i += 3;
 
-            $(document).ready(function () {
-                $('.my-thumb-1').nailthumb({
-                    replaceAnimation: 'animate',
-                });
-            });
         }
     });
 </script>
