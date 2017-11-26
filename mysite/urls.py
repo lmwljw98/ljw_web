@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from new_vod.views import *
 from kmucafe.views import keyboard, answer, crawl
 from kmuRoom import views
+import luda.views
 from vodbot import views as vod
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -34,7 +34,6 @@ urlpatterns = [
     url(r'^kakao/', include('kakao.urls')),
     url(r'^', include('index.urls')),
     url(r'^geoip/', include('geoip.urls')),
-    url(r'^tving/', searchCode, name='vod'),
     url(r'^keyboard/', keyboard, name='keyboard'),
     url(r'^message', answer, name='answer'),
     url(r'^crawl/', crawl, name='crawl'),
@@ -42,6 +41,8 @@ urlpatterns = [
     url(r'^kmuRoom/message', views.answer, name='answer'),
     url(r'^vod/keyboard/', vod.text, name='text'),
     url(r'^vod/message', vod.message, name='message'),
+    url(r'^luda/', luda.views.test, name='test'),
+
     url(r'^admin/', include(admin.site.urls)),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
                                                                                          document_root=settings.STATIC_ROOT)
