@@ -30,8 +30,9 @@
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
 
+    var photos = {{ images|escapejs}};
     $(document).scroll(function () {
-        var photos = JSON.parse("{{ images }}");
+
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
