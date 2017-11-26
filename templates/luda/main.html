@@ -7,68 +7,9 @@
     <title>루다저장소</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    {% load extra %}
 </head>
 
 <body>
-
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-ㅁ<br>
-vv
 <button type="button" class="btn btn-primary">버튼</button>
 <div class="big-box"><h1>Page 1</h1></div>
 <div class="big-box"><h1>Page 2</h1></div>
@@ -82,9 +23,11 @@ vv
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
-        if (maxHeight <= currentScroll + 100) {
+        if (maxHeight <= currentScroll + 300) {
             $("body").append('<img src="../static/images/' + arr[i] + '"</img></br>');
-            i++;
+            $("body").append('<img src="../static/images/' + arr[i+1] + '"</img></br>');
+            $("body").append('<img src="../static/images/' + arr[i+2] + '"</img></br>');
+            i += 3;
         }
     });
 </script>
