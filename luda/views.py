@@ -11,7 +11,7 @@ def test(request):
     for i in My.objects.values('image_name'):
         ret.append(i['image_name'])
 
-    return render(request, 'luda/main.html', {'my': ret})
+    return render(request, 'luda/main.html', {'my': json.dumps(ret)})
 
 
 def db(request):
