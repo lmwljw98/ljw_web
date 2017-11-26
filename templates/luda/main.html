@@ -19,21 +19,12 @@
         height: 200px;
     }
 </style>
-<script>
-    $(document).ready(function () {
-        $('.my-thumb-1').nailthumb();
-    });
-</script>
-
 <body>
 
 <center>
     <br>
     <br>
     <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
-    <div class="my-thumb-1">
-        <img id="ok" src="http://www.ljw.zz.am/static/sshot.png"></img>
-    </div>
 </center>
 
 <script>
@@ -49,6 +40,7 @@
 
         if (maxHeight <= currentScroll + 100) {
             $(".my-thumb-1").append('<center><div class="my-thumb-1"><img src="../static/images/' + arr[i] + '"</img></div></br><br></center>');
+            $('.my-thumb-1').nailthumb();
             $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br><br></center>');
             $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
             i += 3;
