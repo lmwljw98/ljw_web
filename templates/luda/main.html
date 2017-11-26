@@ -30,18 +30,17 @@
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
     var page = 2;
-    // Add contents for max height
-    $(document).ready(function () {
-        $(document).scroll(function () {
-            var maxHeight = $(document).height();
-            var currentScroll = $(window).scrollTop() + $(window).height();
 
-            if (maxHeight <= currentScroll + 100) {
-                console.log(++page);
-                $("body").append('<div class="big-box"><h1>Page ' + page + '</h1></div>');
+    $(document).scroll(function () {
+        var maxHeight = $(document).height();
+        var currentScroll = $(window).scrollTop() + $(window).height();
 
-            }
-        });
+        if (maxHeight <= currentScroll + 100) {
+            console.log(++page);
+            $("body").append('<div class="big-box"><h1>Page ' + page + '</h1></div>');
+
+        }
+    });
 </script>
 </body>
 </html>
