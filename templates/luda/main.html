@@ -74,16 +74,15 @@ vv
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
-    var i = 0;
+    var arr = "{{ my }}";
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            var a = "{{ my.i.image_name }}";
 
-            $("body").append('<img src="../static/images/' + a + '"</img></br>');
+            $("body").append('<img src="../static/images/' + arr[0] + '"</img></br>');
             i++;
 
         }

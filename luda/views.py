@@ -7,7 +7,11 @@ from luda.models import My
 # Create your views here.
 
 def test(request):
-    return render(request, 'luda/main.html', {'my': My.objects.all()})
+    ret = []
+    for i in My.objects.values('image_name'):
+        ret.append(i['image_name'])
+
+    return render(request, 'luda/main.html', {'my': ret})
 
 
 def db(request):
