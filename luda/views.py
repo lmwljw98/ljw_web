@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response
 import os
 import json
 
@@ -7,4 +7,4 @@ import json
 
 def test(request):
     ret_list = os.listdir("./static/images/")
-    return render(request, 'luda/main.html', images=json.dumps(ret_list))
+    return render_to_response(request, 'luda/main.html', {"images": json.dumps(ret_list)})
