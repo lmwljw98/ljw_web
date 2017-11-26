@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>루다저장소</title>
 
@@ -37,7 +37,7 @@
 
         if (maxHeight <= currentScroll + 100) {
             console.log(++page);
-            $("body").append('<div class="big-box"><h1>Page ' + page + '</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page ' + {{ list.page }} + '</h1></div>');
 
         }
     });
