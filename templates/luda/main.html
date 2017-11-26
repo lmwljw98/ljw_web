@@ -32,7 +32,9 @@
     var i = 3;
     var arr = {{ my|safe }};
     $(".my-thumb-1").append('</br></br><center><img src="../static/images/' + arr[0] + '"</img></br><br></center>');
+    $('.my-thumb-1').nailthumb();
     $(".my-thumb-1").append('<center><img src="../static/images/' + arr[1] + '"</img></br><br></center>');
+    $('.my-thumb-1').nailthumb();
     $(".my-thumb-1").append('<center><img src="../static/images/' + arr[2] + '"</img></br><br></center>');
     $('.my-thumb-1').nailthumb();
     $(document).scroll(function () {
@@ -42,7 +44,9 @@
 
         if (maxHeight <= currentScroll + 70) {
             $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i] + '"</img></br><br></center>');
+            $('.my-thumb-1').nailthumb();
             $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br><br></center>');
+            $('.my-thumb-1').nailthumb();
             $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
             $('.my-thumb-1').nailthumb();
             i += 3;
