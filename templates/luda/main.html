@@ -74,14 +74,13 @@ vv
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
-    var arr = "{{ my|safe }}";
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            $("body").append('<img src="../static/images/' + arr[0] + '"</img></br>');
+            $("body").append('<img src="../static/images/' + {{ my.1 }} + '"</img></br>');
         }
     });
 </script>

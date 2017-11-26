@@ -7,11 +7,7 @@ from luda.models import My
 # Create your views here.
 
 def test(request):
-    ret = []
-    for i in My.objects.values('image_name'):
-        ret.append(i['image_name'])
-
-    return render(request, 'luda/main.html', {'my': json.dumps(ret)})
+    return render(request, 'luda/main.html', {'my': My.objects.values('image_name')})
 
 
 def db(request):
