@@ -1,32 +1,49 @@
-<html>
-<style>
-    .big-box {
-        width: 100%;
-        background-color: gray;
-        height: 100vh;
-        border-top: 1px solid black;
-    }
-
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
-</style>
+<html lang="ko">
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+</head>
 <body>
-<div class="big-box"><h1>Page 1</h1></div>
-<div class="big-box"><h1>Page 2</h1></div>
-
-<script src='https://code.jquery.com/jquery-3.0.0.min.js'></script>
+<div id="enters" style="font-size:30px;">
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+안녕?</br>
+</div>
 <script>
-    var page = 2;
+var page = 1;
 
-    $(window).scroll(function () {
-        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-            console.log(++page);
-            $("body").append('<div class="big-box"><h1>Page ' + page + '</h1></div>');
-
-        }
-    });
+$(window).scroll(function() {
+	if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+		for(var i=0; i < 10;i++){
+			$("#enters").append(page + ":내용</br>");
+		}
+		page++;
+	}
+});
 </script>
 </body>
 </html>
