@@ -25,6 +25,7 @@
     <br>
     <br>
     <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
+    <div class=""my-thumb-1"></div>
 </center>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
@@ -40,10 +41,10 @@
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            $(".my-thumb-1").append('<center><div class="my-thumb-1"><img src="../static/images/' + arr[i] + '"</img></div></br><br></center>');
+            $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i] + '"</img></br><br></center>');
             $('.my-thumb-1').nailthumb();
-            $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br><br></center>');
-            $(".my-thumb-1").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br><br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
             i += 3;
 
         }
