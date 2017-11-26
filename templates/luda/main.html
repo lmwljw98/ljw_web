@@ -51,10 +51,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
-    var myList = new Array();
-    for (var i = 1; i < 16; i++){
-    myList.push({{ list.i }})
-    }
     var page = 1;
     var maxHeight = $(document).height();
     var currentScroll = $(window).scrollTop() + $(window).height();
@@ -63,8 +59,7 @@
 
         if (maxHeight <= currentScroll + 100) {
             for (var i = 0; i < 5; i++) {
-                $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
-                $('#enters').append($('<img src="../static/images/' + myList[i] + '"></img></br>'));
+                $('#enters').append($('<img src="../static/images/' + {{ list.i }} + '"></img></br>'));
             }
 
             page++;
