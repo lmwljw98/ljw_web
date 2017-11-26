@@ -8,7 +8,7 @@ from luda.models import My
 
 def test(request):
     arr = My.objects.values_list('image_name', flat=True).order_by('id')
-    return render(request, 'luda/main.html', {'my': list(arr)})
+    return render(request, 'luda/main.html', {'my': json.dumps(list(arr))})
 
 
 def db(request):
