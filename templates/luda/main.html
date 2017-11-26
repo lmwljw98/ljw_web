@@ -82,17 +82,11 @@ vv
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            var a = "{{ my.0.image_name }}";
-            var b = "{{ my.1.image_name }}";
-            var c = "{{ my.2.image_name }}";
-            var d = "{{ my.3.image_name }}";
-            var e = "{{ my.4.image_name }}";
+            var a = "{{ my.i.image_name }}";
 
-            $("body").append('<img src="../static/images/' + arr[0] + '"</img></br>');
-            $("body").append('<img src="../static/images/' + b + '"</img></br>');
-            $("body").append('<img src="../static/images/' + c + '"</img></br>');
-            $("body").append('<img src="../static/images/' + d + '"</img></br>');
-            $("body").append('<img src="../static/images/' + e + '"</img></br>');
+            $("body").append('<img src="../static/images/' + a + '"</img></br>');
+            i++;
+
         }
     });
 </script>
