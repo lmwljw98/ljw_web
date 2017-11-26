@@ -30,9 +30,10 @@
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
     var photos = [];
-    {% for image in images %}
-        photos.push('{{ image }}');
-    {% endfor %}
+
+    photos.push('{{ image.0 }}');
+    photos.push('{{ image.1 }}');
+
     $(document).scroll(function () {
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
