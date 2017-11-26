@@ -76,13 +76,14 @@ vv
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
     var i = 0;
+    var arr = "{{ my }}";
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            $("body").append('<img src="../static/images/' + {{ my|return_item:i }} + '"</img></br>');
+            $("body").append('<img src="../static/images/' + arr[i] + '"</img></br>');
             i++;
         }
     });
