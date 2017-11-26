@@ -6,4 +6,4 @@ import os
 
 def test(request):
     ret_list = os.listdir("./static/images/")
-    return render(request, 'luda/main.html', {'my': ret_list})
+    return render(request, 'luda/main.html', {'images': ret_list})
