@@ -7,4 +7,4 @@ import json
 
 def test(request):
     ret_list = os.listdir("./static/images/")
-    return render(request, 'luda/main.html', {'my': [1, 2, 3, 4, 5, 6]})
+    return render(request, 'luda/main.html', {'my': 'asdf'})
