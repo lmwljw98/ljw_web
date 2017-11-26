@@ -7,10 +7,10 @@ from luda.models import My
 # Create your views here.
 
 def test(request):
-    entry_list = list(My.objects.values('image_name'))
+    entry_list = list(My.objects.values_list('image_name', flat=True))
     for i in range(len(entry_list)):
         entry_list[i] = entry_list[i].replace("&#39;", "")
-    return render(request, 'luda/main.html', {'my': json.dumps(entry_list)})
+    return render(request, 'luda/main.html', {'my': entry_list})
 
 
 def db(request):

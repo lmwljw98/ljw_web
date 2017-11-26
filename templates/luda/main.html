@@ -76,7 +76,7 @@ vv
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
     var i = 0;
-    var arr = "{{ my }}";
+    var arr = {{ my }};
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
