@@ -75,6 +75,7 @@ vv
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
 
+    var arr = "{{ my }}";
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
@@ -87,7 +88,11 @@ vv
             var d = "{{ my.3.image_name }}";
             var e = "{{ my.4.image_name }}";
 
-            $("body").append('<img src="../static/images/' + a + '"</img></br>');
+            $("body").append('<img src="../static/images/' + arr[0] + '"</img></br>');
+            $("body").append('<img src="../static/images/' + b + '"</img></br>');
+            $("body").append('<img src="../static/images/' + c + '"</img></br>');
+            $("body").append('<img src="../static/images/' + d + '"</img></br>');
+            $("body").append('<img src="../static/images/' + e + '"</img></br>');
         }
     });
 </script>
