@@ -28,15 +28,13 @@
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
-
-        if (maxHeight <= currentScroll + 70) {
-            $("body").append('<center><br><br><img src="../static/images/' + arr[i] + '" style="width: 30%; height: auto;"</img></br><br></center>');
-            $("body").append('<center><br><br><img src="../static/images/' + arr[i + 1] + '" style="width: 30%; height: auto;"</img></br><br></center>');
-            $("body").append('<center><br><br><img src="../static/images/' + arr[i + 2] + '" style="width: 30%; height: auto;"</img></br><br></center>');
-            i += 3;
-        }
-        if (i > arr.length){
-            return true;
+        if arr[i] != undefined {
+            if (maxHeight <= currentScroll + 70) {
+                $("body").append('<center><br><br><img src="../static/images/' + arr[i] + '" style="width: 30%; height: auto;"</img></br><br></center>');
+                $("body").append('<center><br><br><img src="../static/images/' + arr[i + 1] + '" style="width: 30%; height: auto;"</img></br><br></center>');
+                $("body").append('<center><br><br><img src="../static/images/' + arr[i + 2] + '" style="width: 30%; height: auto;"</img></br><br></center>');
+                i += 3;
+            }
         }
     });
 </script>
