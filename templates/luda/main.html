@@ -7,38 +7,45 @@
 
     <link rel="stylesheet" href="../static/css/bootstrap.css">
     <link rel="stylesheet" href="../static/css/site.css">
+    <style>
+        .thumbnail-wrappper {
+            width: 25%;
+        }
+
+        .thumbnail {
+            position: relative;
+            padding-top: 100%; /* 1:1 ratio */
+            overflow: hidden;
+        }
+
+        .thumbnail .centered {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            -webkit-transform: translate(50%, 50%);
+            -ms-transform: translate(50%, 50%);
+            transform: translate(50%, 50%);
+        }
+
+        .thumbnail .centered img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            height: auto;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
 </head>
 
 <body>
 <div id="enters" style="font-size:30px;">
     <button type="button" class="btn btn-primary">버튼</button>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
-    안녕?</br>
     안녕?</br>
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -48,11 +55,12 @@
 
     $(window).scroll(function () {
         if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-            for (var i = 0; i < 10; i++) {
-                $("#enters").append(page + ":내용</br>");
+            for (var i = 0; i < 5; i++) {
                 $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
-
             }
+            { % for s in list % }
+            $("enters").append($('<div class="thumbnail-wrapper"> <div class="thumbnail"> <div class="centered"> <img src="http://www.ljw.zz.am/static/images/' + {{ s }} +'"> </div> </div> </div>'));
+            { % endfor % }
             page++;
         }
     });
