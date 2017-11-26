@@ -7,7 +7,7 @@ from luda.models import My
 # Create your views here.
 
 def test(request):
-    return render(request, 'luda/main.html', {'my': json.dumps(My.objects.all().image_name)})
+    return render(request, 'luda/main.html', {'my': My.objects.all()})
 
 
 def db(request):
