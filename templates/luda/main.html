@@ -29,7 +29,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
-    var page = 2;
+    var page = {{ my.0 }}
 
     $(document).scroll(function () {
         var maxHeight = $(document).height();
@@ -37,16 +37,12 @@
 
         if (maxHeight <= currentScroll + 100) {
             console.log(++page);
-            $("body").append('<div class="big-box"><h1>Page' + {{ my.0 }} + '</h1></div>');
-            {{ my.pop.0 }}
+            $("body").append('<div class="big-box"><h1>Page' + page + '</h1></div>');
             $("body").append('<div class="big-box"><h1>Page{{ my.1 }}</h1></div>');
-            {{ my.pop.1 }}
             $("body").append('<div class="big-box"><h1>Page{{ my.2 }}</h1></div>');
-            {{ my.pop.2 }}
             $("body").append('<div class="big-box"><h1>Page{{ my.3 }}</h1></div>');
-            {{ my.pop.3 }}
             $("body").append('<div class="big-box"><h1>Page{{ my.4 }}</h1></div>');
-            {{ my.pop.4 }}
+            {{ my.pop.0 }}
 
         }
     });
