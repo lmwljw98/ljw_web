@@ -52,9 +52,12 @@
 <script type="text/javascript" src="../static/js/bootstrap.js"></script>
 <script>
     var page = 1;
+    var maxHeight = $(document).height();
+    var currentScroll = $(window).scrollTop() + $(window).height();
 
     $(window).scroll(function () {
-        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+
+        if (maxHeight <= currentScroll + 100) {
             for (var i = 0; i < 5; i++) {
                 $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
             }
