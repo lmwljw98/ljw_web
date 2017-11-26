@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>루다저장소</title>
 
@@ -9,7 +9,7 @@
     <style>
         .big-box {
             width: 100%;
-            background-color: gray;
+            background-color: antiquewhite;
             height: 100vh;
             border-top: 1px solid black;
         }
@@ -37,7 +37,16 @@
 
         if (maxHeight <= currentScroll + 100) {
             console.log(++page);
-            $("body").append('<div class="big-box"><h1>Page ' + {{ list.page }} + '</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page{{ my.0 }}</h1></div>');
+            {{ my.pop.0 }}
+            $("body").append('<div class="big-box"><h1>Page{{ my.1 }}</h1></div>');
+            {{ my.pop.1 }}
+            $("body").append('<div class="big-box"><h1>Page{{ my.2 }}</h1></div>');
+            {{ my.pop.2 }}
+            $("body").append('<div class="big-box"><h1>Page{{ my.3 }}</h1></div>');
+            {{ my.pop.3 }}
+            $("body").append('<div class="big-box"><h1>Page{{ my.4 }}</h1></div>');
+            {{ my.pop.4 }}
 
         }
     });
