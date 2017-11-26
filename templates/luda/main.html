@@ -31,7 +31,7 @@
 <script>
 
     $(document).scroll(function () {
-        var photos = {{ images }};
+        var photos = {{ images|safe }};
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
