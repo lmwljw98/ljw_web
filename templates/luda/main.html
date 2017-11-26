@@ -4,14 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>루다저장소</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
 <div id="enters" style="font-size:30px;">
+    <button type="button" class="btn btn-primary">버튼</button>
     안녕?</br>
     안녕?</br>
     안녕?</br>
@@ -41,6 +41,8 @@
     안녕?</br>
     안녕?</br>
 </div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <script>
     var page = 1;
 
@@ -48,7 +50,7 @@
         if ($(window).scrollTop() == $(document).height() - $(window).height()) {
             for (var i = 0; i < 10; i++) {
                 $("#enters").append(page + ":내용</br>");
-                $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button>'));
+                $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
 
             }
             page++;
