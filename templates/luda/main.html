@@ -7,39 +7,6 @@
 
     <link rel="stylesheet" href="../static/css/bootstrap.css">
     <link rel="stylesheet" href="../static/css/site.css">
-    <style>
-        .thumbnail-wrappper {
-            width: 25%;
-        }
-
-        .thumbnail {
-            position: relative;
-            padding-top: 100%; /* 1:1 ratio */
-            overflow: hidden;
-        }
-
-        .thumbnail .centered {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            -webkit-transform: translate(50%, 50%);
-            -ms-transform: translate(50%, 50%);
-            transform: translate(50%, 50%);
-        }
-
-        .thumbnail .centered img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            max-width: 100%;
-            height: auto;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-    </style>
 </head>
 
 <body>
@@ -178,6 +145,8 @@
             for (var i = 0; i < 5; i++) {
                 $("p").append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
             }
+
+            $("p").append('<img src="http://www.ljw.zz.am/static/images/C_d4_leVwAA1V4B.jpg">');
 
             page++;
         }
