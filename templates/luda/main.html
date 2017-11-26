@@ -36,8 +36,8 @@
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            $("body").append('<div class="big-box"><h1>Page' + {{ images|safe }}[0] + '</h1></div>');
-            $("body").append('<div class="big-box"><h1>Page' + {{ images|safe }}[1] + '</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page{{ images|safe.0 }}</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page' + {{ images|safe.1 }} + '</h1></div>');
         }
     });
 </script>
