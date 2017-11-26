@@ -7,9 +7,8 @@ from luda.models import My
 # Create your views here.
 
 def test(request):
-    arr = My.objects.all().values_list('image_name', flat=True)
-    converted = list(arr)
-    return render(request, 'luda/main.html', {'my': converted})
+    entry_list = list(My.objects.all())
+    return render(request, 'luda/main.html', {'my': entry_list})
 
 
 def db(request):
