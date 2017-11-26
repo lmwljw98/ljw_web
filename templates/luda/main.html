@@ -7,7 +7,12 @@
     <title>루다저장소</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-
+    <style type="text/css">
+        #sizeauto {
+            width: 30%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,24 +21,26 @@
     <br>
     <br>
     <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
+    <p id=sizeauto>
+    </p>
 </center>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
     var i = 3;
     var arr = {{ my|safe }};
-    $("body").append('</br></br><center><img src="../static/images/' + arr[0] + '" style="width: 50%; height: auto;"</img></br><br></center>');
-    $("body").append('<center><br><br><img src="../static/images/' + arr[1] + '" style="width: 50%; height: auto;"</img></br><br></center>');
-    $("body").append('<center><br><br><img src="../static/images/' + arr[2] + '" style="width: 50%; height: auto;"</img></br><br></center>');
+    $("p").append('</br></br><center><img src="../static/images/' + arr[0] + '"</img></br><br></center>');
+    $("p").append('<center><br><br><img src="../static/images/' + arr[1] + '"</img></br><br></center>');
+    $("p").append('<center><br><br><img src="../static/images/' + arr[2] + '"</img></br><br></center>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 70) {
-            $("body").append('<center><br><br><img src="../static/images/' + arr[i] + '" style="width: 50%; height: auto;"</img></br><br></center>');
-            $("body").append('<center><br><br><img src="../static/images/' + arr[i + 1] + '" style="width: 50%; height: auto;"</img></br><br></center>');
-            $("body").append('<center><br><br><img src="../static/images/' + arr[i + 2] + '" style="width: 50%; height: auto;"</img></br><br></center>');
+            $("p").append('<center><br><br><img src="../static/images/' + arr[i] + '"</img></br><br></center>');
+            $("p").append('<center><br><br><img src="../static/images/' + arr[i + 1] + '"</img></br><br></center>');
+            $("p").append('<center><br><br><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
             i += 3;
 
         }
