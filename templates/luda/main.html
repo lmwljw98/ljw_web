@@ -18,18 +18,18 @@
 <script>
     var i = 3;
     var arr = {{ my|safe }};
-    $("body").append('</br></br><img src="../static/images/' + arr[0] + '"</img></br>');
-    $("body").append('<img src="../static/images/' + arr[1] + '"</img></br>');
-    $("body").append('<img src="../static/images/' + arr[2] + '"</img></br>');
+    $("body").append('</br></br><center><img src="../static/images/' + arr[0] + '"</img></br></center>');
+    $("body").append('<center><img src="../static/images/' + arr[1] + '"</img></br></center>');
+    $("body").append('<center><img src="../static/images/' + arr[2] + '"</img></br></center>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 300) {
-            $("body").append('<img src="../static/images/' + arr[i] + '"</img></br>');
-            $("body").append('<img src="../static/images/' + arr[i + 1] + '"</img></br>');
-            $("body").append('<img src="../static/images/' + arr[i + 2] + '"</img></br>');
+            $("body").append('<center><img src="../static/images/' + arr[i] + '"</img></br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br></center>');
             i += 3;
         }
     });
