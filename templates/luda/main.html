@@ -37,7 +37,7 @@
 
         if (maxHeight <= currentScroll + 100) {
             console.log(++page);
-            $("body").append('<div class="big-box"><h1>Page{{ my.0 }}</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page' + {{ my.0 }} + '</h1></div>');
             {{ my.pop.0 }}
             $("body").append('<div class="big-box"><h1>Page{{ my.1 }}</h1></div>');
             {{ my.pop.1 }}
