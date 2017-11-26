@@ -82,7 +82,7 @@ vv
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            $("body").append('<img src="../static/images/' + {{ my|return_item:i.image_name }} + '"</img></br>');
+            $("body").append('<img src="../static/images/' + {{ my|return_item:i }} + '"</img></br>');
             i++;
         }
     });
