@@ -11,6 +11,8 @@
 
 <body>
 <center>
+    <br>
+    <br>
     <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
 </center>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -18,18 +20,18 @@
 <script>
     var i = 3;
     var arr = {{ my|safe }};
-    $("body").append('</br></br><center><img src="../static/images/' + arr[0] + '"</img></br></center>');
-    $("body").append('<center><img src="../static/images/' + arr[1] + '"</img></br></center>');
-    $("body").append('<center><img src="../static/images/' + arr[2] + '"</img></br></center>');
+    $("body").append('</br></br><center><img src="../static/images/' + arr[0] + '"</img></br><br></center>');
+    $("body").append('<center><img src="../static/images/' + arr[1] + '"</img></br><br></center>');
+    $("body").append('<center><img src="../static/images/' + arr[2] + '"</img></br><br></center>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 300) {
-            $("body").append('<center><img src="../static/images/' + arr[i] + '"</img></br></center>');
-            $("body").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br></center>');
-            $("body").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i] + '"</img></br><br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i + 1] + '"</img></br><br></center>');
+            $("body").append('<center><img src="../static/images/' + arr[i + 2] + '"</img></br><br></center>');
             i += 3;
         }
     });
