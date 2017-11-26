@@ -11,13 +11,14 @@
 
 <body>
 <button type="button" class="btn btn-primary">버튼</button>
-<div class="big-box"><h1>Page 1</h1></div>
-<div class="big-box"><h1>Page 2</h1></div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
-    var i = 0;
+    var i = 3;
     var arr = {{ my|safe }};
+    $("body").append('<img src="../static/images/' + arr[0] + '"</img></br>');
+    $("body").append('<img src="../static/images/' + arr[1] + '"</img></br>');
+    $("body").append('<img src="../static/images/' + arr[2] + '"</img></br>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
@@ -25,8 +26,8 @@
 
         if (maxHeight <= currentScroll + 300) {
             $("body").append('<img src="../static/images/' + arr[i] + '"</img></br>');
-            $("body").append('<img src="../static/images/' + arr[i+1] + '"</img></br>');
-            $("body").append('<img src="../static/images/' + arr[i+2] + '"</img></br>');
+            $("body").append('<img src="../static/images/' + arr[i + 1] + '"</img></br>');
+            $("body").append('<img src="../static/images/' + arr[i + 2] + '"</img></br>');
             i += 3;
         }
     });
