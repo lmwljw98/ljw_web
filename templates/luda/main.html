@@ -31,14 +31,13 @@
 <script>
 
     $(document).scroll(function () {
-        var photos = "{{ images.1 }}"
+        var photos = "{{ images.1 }}";
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            {% for s in images %}
-            $("body").append('<div class="big-box"><h1>Page' + s + '</h1></div>');
-            {% endfor %}
+            $("body").append('<div class="big-box"><h1>Page' + photos + '</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page' + photos + '</h1></div>');
         }
     });
 </script>
