@@ -11,6 +11,7 @@ def test(request):
 
 
 def db(request):
+    My.objects.all().delete()
     ret_list = os.listdir("./static/images/")
     for i in range(len(ret_list)):
         # My.objects.create(image_name=ret_list[i])

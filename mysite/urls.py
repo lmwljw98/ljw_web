@@ -41,8 +41,8 @@ urlpatterns = [
     url(r'^kmuRoom/message', views.answer, name='answer'),
     url(r'^vod/keyboard/', vod.text, name='text'),
     url(r'^vod/message', vod.message, name='message'),
+    url(r'^luda/db/', luda.db, name='db'),
     url(r'^luda/', include('luda.urls')),
-    url(r'^luda/db', include('luda.urls')),
     url(r'^admin/', include(admin.site.urls)),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
                                                                                          document_root=settings.STATIC_ROOT)
