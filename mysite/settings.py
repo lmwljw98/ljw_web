@@ -48,9 +48,8 @@ INSTALLED_APPS = [
     'geoip',
     'kmucafe',
     'kmuRoom',
-    'tweet',
     'vodbot',
-    'new_vod',
+    'luda',
 ]
 
 MIDDLEWARE = [
