@@ -8,6 +8,8 @@ from luda.models import My
 
 def test(request):
     entry_list = list(My.objects.values('image_name'))
+    for i in range(len(entry_list)):
+        entry_list[i] = entry_list[i].replace("&#39;", "")
     return render(request, 'luda/main.html', {'my': json.dumps(entry_list)})
 
 
