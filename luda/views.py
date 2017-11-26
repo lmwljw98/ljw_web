@@ -8,7 +8,7 @@ from luda.models import My
 
 def test(request):
     entry_list = list(My.objects.values('image_name'))
-    return render(request, 'luda/main.html', {'my': entry_list})
+    return render(request, 'luda/main.html', {'my': json.dumps(entry_list)})
 
 
 def db(request):
