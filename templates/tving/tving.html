@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소</title>
+ <style type="text/css">
+       #crimson{
+           color:white;background-color:crimson;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+     #cadetblue{
+           color:white;background-color:cadetblue;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+    
+</head>
+
+<body>
+
+<center>
+
+<p><br></p>
+<p><br></p>
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<br>
+<p id="deeppink">
+{% for key, value in dic.items %}
+       <br>
+       {{ key }}
+       {{ value }}
+       <br>
+{% endfor %}
+</p>
+
+  
+</center>
+</body>

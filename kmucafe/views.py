@@ -152,9 +152,12 @@ def crawl(request):
 
         cafe = soup.find_all("td", {"class": "mn_corn"})
         m = soup.find_all(bgcolor="#eaffd9")
+        try:
+            baro1 = m[0].text.split()
+            baro1_1 = [baro1[0], baro1[1] + baro1[2][0:5], baro1[2][5:], baro1[3] + baro1[4]]
+        except:
+            baro1_1 = []
 
-        baro1 = m[0].text.split()
-        baro1_1 = [baro1[0], baro1[1] + baro1[2][0:5], baro1[2][5:], baro1[3] + baro1[4]]
         result = ''
         try:
             result += cafe[0].text

@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from new_vod.views import *
 from kmucafe.views import keyboard, answer, crawl
 from kmuRoom import views
-from tweet import views as twitter
 from vodbot import views as vod
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -34,14 +34,12 @@ urlpatterns = [
     url(r'^kakao/', include('kakao.urls')),
     url(r'^', include('index.urls')),
     url(r'^geoip/', include('geoip.urls')),
+    url(r'^tving/', searchCode, name='vod'),
     url(r'^keyboard/', keyboard, name='keyboard'),
     url(r'^message', answer, name='answer'),
     url(r'^crawl/', crawl, name='crawl'),
     url(r'^kmuRoom/keyboard/', views.keyboard, name='keyboard'),
     url(r'^kmuRoom/message', views.answer, name='answer'),
-    url(r'^tweet/keyboard/', twitter.text, name='text'),
-    url(r'^tweet/message', twitter.message, name='message'),
-    url(r'^search/(?P<userid>\w+)/(?P<your_url>\w+)/$', twitter.getTweetbyID, name='getTweetbyID'),
     url(r'^vod/keyboard/', vod.text, name='text'),
     url(r'^vod/message', vod.message, name='message'),
     url(r'^admin/', include(admin.site.urls)),

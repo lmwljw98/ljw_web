@@ -25,7 +25,7 @@ def searchMediaCode(keyword):
 
 def searchProgramCode(index):
     k = mediaCode_list[index]
-    os.system("python3 ./vodbot/search.py %s &" % k)
+    os.system("sudo python3 ./vodbot/search.py %s &" % k)
 
 
 def text(request):
@@ -74,7 +74,7 @@ def message(request):
             }
         )
 
-    else:
+    elif not name.isdigit():
         my = searchMediaCode(name)
         return JsonResponse(
             {

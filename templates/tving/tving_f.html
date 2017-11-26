@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>정우저장소</title>
+ <style type="text/css">
+       #crimson{
+           color:white;background-color:crimson;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+       #aqua{
+           color:black;background-color:aqua;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+     #cadetblue{
+           color:white;background-color:cadetblue;
+           width:300px;
+           height:auto;
+           border:2px solid black;
+           border-radius:10px;
+       }
+    </style>
+    
+</head>
+
+<body>
+
+<center>
+
+<p><br></p>
+<p><br></p>
+<FONT color="#f7c700" size=5 face=굴림, 돋움, Seoul, 한강체><b>★★<B>★★★★★★★★</FONT>
+<br>
+<p id="aqua" >
+<a style="text-decoration:none;" href="{% url 'index' %}" target="_self"><font color=#0f0f0f face="verdana" size=6>LJW Storage</font></a>
+</p>
+<br>
+<font color=#00ccc0 size=5 face="나눔명조"><b>VOD Search</b></font>
+<br><br>
+<div>
+        <form method="POST">
+           
+            {% csrf_token %}
+            Search : {{ form.input }}
+            <br>
+            <br><br>
+            <button type="submit" name="OK">확인</button>
+
+        </form>
+</div>
+
+</center>
+</body>

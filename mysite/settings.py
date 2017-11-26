@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'kmucafe',
     'kmuRoom',
     'tweet',
-    'vodbot'
+    'vodbot',
+    'new_vod',
 ]
 
 MIDDLEWARE = [
