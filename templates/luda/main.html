@@ -57,7 +57,7 @@
 
     $(window).scroll(function () {
 
-        if (maxHeight <= currentScroll + 100) {
+        if (maxHeight <= currentScroll + 10) {
             for (var i = 0; i < 5; i++) {
                 $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
             }
