@@ -45,6 +45,7 @@
 
 <body>
 <div id="enters" style="font-size:30px;">
+    {% for s in list %}
     <button type="button" class="btn btn-primary">버튼</button>
     안녕?</br>
     안녕?</br>
@@ -79,6 +80,7 @@
     안녕?</br>
     안녕?</br>
     안녕?</br>
+    {% endfor %}
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="static/js/bootstrap.js"></script>
@@ -91,7 +93,7 @@
                 $('#enters').append($('<button type="button" class="btn btn-primary">버튼' + page + '</button></br>'));
             }
 
-            $("#enters").append($('{% for s in list %}<div class="thumbnail-wrapper"> <div class="thumbnail"> <div class="centered"> <img src="http://www.ljw.zz.am/static/images/' + {{ s }} +'"> </div> </div> </div>{% endfor %}'));
+            $("#enters").append($('<div class="thumbnail-wrapper"> <div class="thumbnail"> <div class="centered"> <img src="http://www.ljw.zz.am/static/images/{{ s }}"> </div> </div> </div>'));
 
             page++;
         }
