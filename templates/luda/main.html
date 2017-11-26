@@ -21,7 +21,7 @@
 </head>
 
 <body>
-{{ my }}
+<p>{{ my }}</p>
 <input type="hidden" id="myVar" name="variable" value={{ my }}>
 <button type="button" class="btn btn-primary">버튼</button>
 <div class="big-box"><h1>Page 1</h1></div>
@@ -39,8 +39,8 @@
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (maxHeight <= currentScroll + 100) {
-            $("body").append('<div class="big-box"><h1>Page' + photo[0] + '</h1></div>');
-            $("body").append('<div class="big-box"><h1>Page' + photo[1] + '</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page{{ my.1 }}</h1></div>');
+            $("body").append('<div class="big-box"><h1>Page{{ my.0 }}</h1></div>');
         }
     });
 </script>
