@@ -27,15 +27,13 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
-    var i = 10;
+    var i = 7;
     var arr = {{ my|safe }};
 
-    for (var j = 0; j < 9; j++) {
-        $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[j] + '" style="width: 66%; height: auto;"</img></div>');
-        $(".overzoom").fadeIn();
+    for (var j = 0; j < 6; j++) {
+        $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[j] + '" style="width: 66%; height: auto;"</img></div>').hide().fadeIn(1000);
     }
-    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[9] + '" style="width: 66%; height: auto;"</img></div><br><br>');
-    $(".overzoom").fadeIn();
+    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[6] + '" style="width: 66%; height: auto;"</img></div><br><br>').hide().fadeIn(1000);
 
     $(document).scroll(function () {
 
@@ -45,13 +43,10 @@
         if (typeof arr[i] != "undefined") {
             if (maxHeight <= currentScroll + 70) {
 
-                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 66%; height: auto;"</img></div>');
-                $(".overzoom").fadeIn();
-                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 66%; height: auto;"</img></div>');
-                $(".overzoom").fadeIn();
-                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 66%; height: auto;"</img></div><br><br>');
-                $(".overzoom").fadeIn();
-                
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 66%; height: auto;"</img></div>').hide().fadeIn(1000);
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 66%; height: auto;"</img></div>').hide().fadeIn(1000);
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 66%; height: auto;"</img></div><br><br>').hide().fadeIn(1000);
+
                 i += 3;
             }
 
