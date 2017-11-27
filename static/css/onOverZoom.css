@@ -1,4 +1,4 @@
-.zoom  img {
+.overzoom  img {
     -webkit-transform:scale(1);
     -moz-transform:scale(1);
     -ms-transform:scale(1);
@@ -10,7 +10,7 @@
     -o-transition:.3s;
     transition:.3s;
 }
-.zoom:hover img {
+.overzoom:hover img {
     -webkit-transform:scale(1.4);
     -moz-transform:scale(1.4);
     -ms-transform:scale(1.4);
