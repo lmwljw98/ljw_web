@@ -35,7 +35,7 @@
     //모바일 브라우저 문자열 체크
     var mobileInfo = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
     for (var info in mobileInfo) {
-        if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
+        if (navigator.userAgent.search(info) > -1) {
             mobile = 1;
             break;
         }
@@ -87,7 +87,7 @@
         }
 
     })
-    
+
     var maxHeight = -1;
 
     $('.overzoom').each(function () {
