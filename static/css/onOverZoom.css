@@ -10,7 +10,7 @@
     -o-transition: .3s;
     transition: .3s;
 
-    background-position: center;
+    vertical-align: middle;
 
 }
 
