@@ -10,8 +10,14 @@
     -o-transition: .3s;
     transition: .3s;
 
-    vertical-align: middle;
+    margin: 0 auto;
+    display: block;
 
+}
+
+.overzoom {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .overzoom:hover img {
