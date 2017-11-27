@@ -27,7 +27,7 @@
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
+<script defer src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
 <script>
     var i = 7;
     var arr = {{ my|safe }};
@@ -65,7 +65,7 @@
             $(this).height(maxHeight);
         });
 
-        $('.overzoom').flexVerticalCenter();
+        $('img').flexVerticalCenter();
 
     });
 </script>
