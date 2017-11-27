@@ -11,10 +11,7 @@
     <style type="text/css">body {
         text-align: center;
     }
-
-    .overzoom {
-        text-align: center;
-    }</style>
+</style>
 </head>
 
 <body>
@@ -33,17 +30,14 @@
     var i = 3;
     var arr = {{ my|safe }};
 
-    $("body").append('<div class="overzoom" style="border: 1px solid gold; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[0] + '" style="width: 35%; height: auto;"</img></div>');
-    $("body").append('<div class="overzoom" style="border: 1px solid red; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[1] + '" style="width: 35%; height: auto;"</img></div>');
-    $("body").append('<div class="overzoom" style="border: 1px solid blue; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[2] + '" style="width: 35%; height: auto;"</img></div></br><br>');
+    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[0] + '" style="width: 35%; height: auto;"</img></div>');
+    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[1] + '" style="width: 35%; height: auto;"</img></div>');
+    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[2] + '" style="width: 35%; height: auto;"</img></div></br><br>');
 
     while ($("body").height() < $(window).height()) {
 
-        $("body").append('<div class="overzoom" style="border: 1px solid gold; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 35%; height: auto;"</img></div>');
-        $("body").append('<div class="overzoom" style="border: 1px solid red; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 35%; height: auto;"</img></div>');
-        $("body").append('<div class="overzoom" style="border: 1px solid blue; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 35%; height: auto;"</img></div></br><br>');
-
-        i += 3;
+        $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 35%; height: auto;"</img></div>');
+        i += 1;
     }
 
     $(document).scroll(function () {
@@ -54,11 +48,8 @@
         if (typeof arr[i] != "undefined") {
             if (maxHeight <= currentScroll + 70) {
 
-                $("body").append('<div class="overzoom" style="border: 1px solid gold; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 35%; height: auto;"</img></div>');
-                $("body").append('<div class="overzoom" style="border: 1px solid red; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 35%; height: auto;"</img></div>');
-                $("body").append('<div class="overzoom" style="border: 1px solid blue; width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 35%; height: auto;"</img></div></br><br>');
-
-                i += 3;
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 35%; height: auto;"</img></div>');
+                i += 1;
             }
 
 
