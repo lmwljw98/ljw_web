@@ -30,16 +30,15 @@
     var i = 7;
     var arr = {{ my|safe }};
 
-    var mobile = 0;
-
     //모바일 브라우저 문자열 체크
-    var mobileInfo = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
-    for (var info in mobileInfo) {
-        if (navigator.userAgent.search(info) > -1) {
-            mobile = 1;
-            break;
-        }
+    var UserAgent = navigator.userAgent;
+    if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+        var mobile = 1;
     }
+    else {
+        var mobile = 0;
+    }
+
 
     if (mobile == 0) {
         for (var j = 0; j < 6; j++) {
