@@ -8,7 +8,9 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/onOverZoom.css' %}">
-    <style type="text/css">body { text-align: center; }</style>
+    <style type="text/css">body {
+        text-align: center;
+    }</style>
 </head>
 
 <body>
@@ -18,29 +20,26 @@
 
 <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
 
-<div class="zoom">
-    <br>
-    <br>
-</div>
-
+<br>
+<br>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
     var i = 3;
     var arr = {{ my|safe }};
-    $(".zoom").append('<div class="overzoom"><br><br><img src="../static/images/' + arr[0] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
-    $(".zoom").append('<div class="overzoom"><img src="../static/images/' + arr[1] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
-    $(".zoom").append('<div class="overzoom"><img src="../static/images/' + arr[2] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp</br><br>');
+    $("body").append('<div class="overzoom"><br><br><img src="../static/images/' + arr[0] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
+    $("body").append('<div class="overzoom"><img src="../static/images/' + arr[1] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
+    $("body").append('<div class="overzoom"><img src="../static/images/' + arr[2] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp</br><br>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
         if (typeof arr[i] != "undefined") {
             if (maxHeight <= currentScroll + 70) {
-                $(".zoom").append('<div class="overzoom"><br><br><img src="../static/images/' + arr[i] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
-                $(".zoom").append('<div class="overzoom"><img src="../static/images/' + arr[i + 1] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
-                $(".zoom").append('<div class="overzoom"><img src="../static/images/' + arr[i + 2] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp</br><br>');
+                $("body").append('<div class="overzoom"><br><br><img src="../static/images/' + arr[i] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
+                $("body").append('<div class="overzoom"><img src="../static/images/' + arr[i + 1] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp');
+                $("body").append('<div class="overzoom"><img src="../static/images/' + arr[i + 2] + '" style="width: 25%; height: auto;"</img></div>&nbsp&nbsp</br><br>');
                 i += 3;
             }
         }
