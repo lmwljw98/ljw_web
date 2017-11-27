@@ -10,17 +10,8 @@
     -o-transition: .3s;
     transition: .3s;
 
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -97px;
-    margin-top: -130px;
+    background-position: center;
 
-}
-
-.overzoom {
-    position: relative
 }
 
 .overzoom:hover img {
