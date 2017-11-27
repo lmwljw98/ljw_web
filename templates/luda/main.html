@@ -41,7 +41,7 @@
         var currentScroll = $(window).scrollTop() + $(window).height();
 
         if (typeof arr[i] != "undefined") {
-            if (maxHeight <= currentScroll + 70) {
+            if (maxHeight <= currentScroll + 130) {
 
                 $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:30px;"><img src="../static/images/' + arr[i] + '" style="width: 66%; height: auto;"</img></div>').children(':last').hide().fadeIn(500);
                 $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:30px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 66%; height: auto;"</img></div>').children(':last').hide().fadeIn(500);
