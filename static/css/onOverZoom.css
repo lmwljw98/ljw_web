@@ -19,9 +19,3 @@
     -o-transform: scale(1.2);
     transform: scale(1.2);
 }
-
-.overzoom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-}
