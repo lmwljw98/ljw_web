@@ -85,17 +85,17 @@
             }
         }
 
-    var maxHeight = -1;
+        var maxHeight = -1;
 
-    $('.overzoom').each(function () {
-        maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
-    });
+        $('.overzoom').each(function () {
+            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+        });
 
-    $('.overzoom').each(function () {
-        $(this).height(maxHeight);
-    });
+        $('.overzoom').each(function () {
+            $(this).height(maxHeight);
+        });
 
-    $('img').flexVerticalCenter();
+        $('img').flexVerticalCenter();
     })
 
 </script>
