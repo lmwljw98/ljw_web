@@ -32,7 +32,6 @@ urlpatterns = [
     url(r'^chart/', include('chart.urls')),
     url(r'^gallery/', include('gallery.urls')),
     url(r'^kakao/', include('kakao.urls')),
-    url(r'^', include('index.urls')),
     url(r'^geoip/', include('geoip.urls')),
     url(r'^keyboard/', keyboard, name='keyboard'),
     url(r'^message', answer, name='answer'),
@@ -42,7 +41,7 @@ urlpatterns = [
     url(r'^vod/keyboard/', vod.text, name='text'),
     url(r'^vod/message', vod.message, name='message'),
     url(r'^luda/db/', luda.views.db, name='db'),
-    url(r'^luda/', include('luda.urls'), name='luda'),
+    url(r'^', include('luda.urls'), name='luda'),
     url(r'^admin/', include(admin.site.urls)),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
                                                                                          document_root=settings.STATIC_ROOT)
