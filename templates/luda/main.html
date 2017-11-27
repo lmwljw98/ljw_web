@@ -29,18 +29,18 @@
 <script>
     var i = 3;
     var arr = {{ my|safe }};
-    $(".zoom").append('<br><br><img src="../static/images/' + arr[0] + '" style="width: 25%; height: auto;"</img>');
-    $(".zoom").append('<img src="../static/images/' + arr[1] + '" style="width: 25%; height: auto;"</img>');
-    $(".zoom").append('<img src="../static/images/' + arr[2] + '" style="width: 25%; height: auto;"</img></br><br>');
+    $(".zoom").append('<br><br><img src="../static/images/' + arr[0] + '" style="width: 25%; height: auto;"</img>&nbsp&nbsp');
+    $(".zoom").append('<img src="../static/images/' + arr[1] + '" style="width: 25%; height: auto;"</img>&nbsp&nbsp');
+    $(".zoom").append('<img src="../static/images/' + arr[2] + '" style="width: 25%; height: auto;"</img>&nbsp&nbsp</br><br>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
         if (typeof arr[i] != "undefined") {
             if (maxHeight <= currentScroll + 70) {
-                $(".zoom").append('<br><br><img src="../static/images/' + arr[i] + '" style="width: 25%; height: auto;"</img>');
-                $(".zoom").append('<img src="../static/images/' + arr[i + 1] + '" style="width: 25%; height: auto;"</img>');
-                $(".zoom").append('<img src="../static/images/' + arr[i + 2] + '" style="width: 25%; height: auto;"</img></br><br>');
+                $(".zoom").append('<br><br><img src="../static/images/' + arr[i] + '" style="width: 25%; height: auto;"</img>&nbsp&nbsp');
+                $(".zoom").append('<img src="../static/images/' + arr[i + 1] + '" style="width: 25%; height: auto;"</img>&nbsp&nbsp');
+                $(".zoom").append('<img src="../static/images/' + arr[i + 2] + '" style="width: 25%; height: auto;"</img>&nbsp&nbsp</br><br>');
                 i += 3;
             }
         }
