@@ -8,21 +8,21 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/onOverZoom.css' %}">
+    <style type="text/css">body { text-align: center; }</style>
 </head>
 
 <body>
 
 <br>
 <br>
-<center>
-    <button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
-</center>
-<td align="center" class="centering">
-    <div class="zoom">
-        <br>
-        <br>
-    </div>
-</td>
+
+<button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
+
+<div class="zoom">
+    <br>
+    <br>
+</div>
+
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
