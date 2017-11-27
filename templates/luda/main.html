@@ -8,8 +8,8 @@
     <link rel="icon" href="{% static 'favicon-32x32.png' %}" sizes="32x32">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
-    <meta name="Description" content="이루다 랜덤짤" />
-    <title>♥루랑단 대장님 랜덤짤루다가♥</title>
+    <meta name="Description" content="이루다 랜덤짤"/>
+    <title>이루다 저장소 - ♥루랑단 대장님 랜덤짤루다가♥</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/onOverZoom.css' %}">
     <style type="text/css">body {
@@ -20,83 +20,80 @@
 </head>
 
 <body>
-
 <br><br>
-
-<button type="button" class="btn btn-primary" onClick="window.location.reload()">Reload!</button>
+<button type="button" class="btn btn-info" onClick="alert('lmwljw98@naver.com')">
+    <h2>♥ 이루다 저장소 ♥</h2>
+</button>
 
 <br><br><br><br>
+
+<button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!</button>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="container">
+    <div class="row">
+        <br>
+    </div>
+</div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script defer src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
 <script>
-    var i = 7;
+    var i = 6;
     var arr = {{ my|safe }};
+    $("#reload").after('<br><br>' + arr.length + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
 
-    //모바일 브라우저 문자열 체크
-    var UserAgent = navigator.userAgent;
-    if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
-        var mobile = 1;
-    }
-    else {
-        var mobile = 0;
-    }
-
-
-    if (mobile == 0) {
-        for (var j = 0; j < 6; j++) {
-            $("body").append('<div class="overzoom" style="width:33%; float:left; padding:50px;"><img src="../static/images/' + arr[j] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
+    /*
+        //모바일 브라우저 문자열 체크
+        var UserAgent = navigator.userAgent;
+        if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+            var mobile = 1;
         }
-        $("body").append('<div class="overzoom" style="width:33%; float:left; padding:50px;"><img src="../static/images/' + arr[6] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-    }
-    else if (mobile == 1) {
-        for (var j = 0; j < 6; j++) {
-            $("body").append('<div class="overzoom" style="width:100%; float:left; padding:50px;"><img src="../static/images/' + arr[j] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
+        else {
+            var mobile = 0;
         }
-        $("body").append('<div class="overzoom" style="width:100%; float:left; padding:50px;"><img src="../static/images/' + arr[6] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-    }
+    */
 
+    for (var j = 0; j < 6; j++) {
+        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+    }
 
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
-        if (mobile == 0) {
-            if (typeof arr[i] != "undefined") {
-                if (maxHeight <= currentScroll + 200) {
 
-                    $("body").append('<div class="overzoom" style="width:33%; float:left; padding:50px;"><img src="../static/images/' + arr[i] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-                    $("body").append('<div class="overzoom" style="width:33%; float:left; padding:50px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-                    $("body").append('<div class="overzoom" style="width:33%; float:left; padding:50px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
+        if (typeof arr[i] != "undefined") {
+            if (maxHeight <= currentScroll + 400) {
 
-                    i += 3;
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 1] + '" download><img src="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 2] + '" download><img src="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 3] + '" download><img src="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 4] + '" download><img src="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 5] + '" download><img src="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 6] + '" download><img src="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 7] + '" download><img src="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 8] + '" download><img src="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 9] + '" download><img src="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 10] + '" download><img src="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 11] + '" download><img src="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
 
-                }
-            }
-        }
-        else if (mobile == 1) {
-            if (typeof arr[i] != "undefined") {
-                if (maxHeight <= currentScroll + 200) {
+                i += 12;
 
-                    $("body").append('<div class="overzoom" style="width:100%; float:left; padding:50px;"><img src="../static/images/' + arr[i] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-                    $("body").append('<div class="overzoom" style="width:100%; float:left; padding:50px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-                    $("body").append('<div class="overzoom" style="width:100%; float:left; padding:50px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 100%; height: auto;"</img></div>').children(':last').hide().fadeIn(2000);
-
-                    i += 3;
-
-                }
             }
         }
 
-        var maxHeight = -1;
+        var maxHeight2 = -1;
 
         $('.overzoom').each(function () {
-            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+            maxHeight2 = maxHeight2 > $(this).height() ? maxHeight2 : $(this).height();
         });
 
         $('.overzoom').each(function () {
-            $(this).height(maxHeight);
+            $(this).height(maxHeight2);
         });
 
         $('img').flexVerticalCenter();
