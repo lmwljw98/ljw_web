@@ -10,13 +10,17 @@
     -o-transition: .3s;
     transition: .3s;
 
+    display: block;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    top: 50%;
+    left: 50%;
+    margin-left: -97px;
+    margin-top: -130px;
 
+}
+
+.overzoom {
+    position: relative
 }
 
 .overzoom:hover img {
