@@ -27,13 +27,13 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script>
-    var i = 3;
+    var i = 10;
     var arr = {{ my|safe }};
 
     for (var j = 0; j < 9; j++) {
-        $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[j] + '" style="width: 50%; height: auto;"</img></div>');
+        $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[j] + '" style="width: 66%; height: auto;"</img></div>');
     }
-    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[9] + '" style="width: 50%; height: auto;"</img></div><br><br>');
+    $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[9] + '" style="width: 66%; height: auto;"</img></div><br><br>');
     $(document).scroll(function () {
 
         var maxHeight = $(document).height();
@@ -42,9 +42,9 @@
         if (typeof arr[i] != "undefined") {
             if (maxHeight <= currentScroll + 70) {
 
-                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 50%; height: auto;"</img></div>');
-                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 50%; height: auto;"</img></div>');
-                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 50%; height: auto;"</img></div><br><br>');
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i] + '" style="width: 66%; height: auto;"</img></div>');
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 1] + '" style="width: 66%; height: auto;"</img></div>');
+                $("body").append('<div class="overzoom" style="width: 33%; float:left; padding:10px;"><img src="../static/images/' + arr[i + 2] + '" style="width: 66%; height: auto;"</img></div><br><br>');
                 i += 3;
             }
 
