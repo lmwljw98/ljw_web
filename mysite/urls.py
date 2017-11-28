@@ -23,6 +23,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    url(r'^index/', include('index.urls')),
     url(r'^movie/', include('movie.urls')),
     url(r'^photo/', include('photo.urls')),
     url(r'^capture/', include('capture.urls')),
