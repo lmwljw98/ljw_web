@@ -28,5 +28,5 @@ def db(request):
     for i in range(len(ret_list2)):
         a = Gmy(gif_name=ret_list2[i])
         a.save()
-        
+
     return render(request, 'luda/main.html')
