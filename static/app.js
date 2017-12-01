@@ -34,7 +34,7 @@ $(document).scroll(function () {
 
                 i += 12;
             }
-            else if (mode == 1 && typeof gif[i] != "undefined") {
+            if (mode == 1 && typeof gif[m] != "undefined") {
 
                 $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m] + '" download><img src="../static/gif/' + gif[m] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
                 $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 1] + '" download><img src="../static/gif/' + gif[m + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
