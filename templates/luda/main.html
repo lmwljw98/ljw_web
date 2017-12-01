@@ -27,8 +27,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-left">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#" id="picture">Pictures :D</a></li>
+            <li><a href="#" id="gif">GIFs :)</a></li>
         </ul>
     </div>
 </nav>
@@ -71,6 +71,12 @@
 <script>
     var i = 6;
     var arr = {{ my|safe }};
+    var gif = [];
+    for (var m=0; m<arr.length; m++){
+        if (arr[m].endswith(".gif")){
+            gif.push(arr[m])
+        }
+    }
     $("#reload").after('<br><br>' + arr.length + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
 
     /*
