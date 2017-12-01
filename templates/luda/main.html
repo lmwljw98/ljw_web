@@ -165,6 +165,8 @@
                             effectTime: 2000
                         });
                         i++;
+                        changeHeight();
+                        $('img').flexVerticalCenter();
                     }
                 }
                 if (mode == 1 && typeof gif[m] != "undefined") {
@@ -175,10 +177,11 @@
                             effectTime: 2000
                         });
                         m++;
+                        changeHeight();
+                        $('img').flexVerticalCenter();
                     }
                 }
-                changeHeight();
-                $('img').flexVerticalCenter();
+
             }
         }
     );
