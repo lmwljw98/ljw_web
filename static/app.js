@@ -1,4 +1,4 @@
-function changeHeightmakeCenter() {
+function changeHeight() {
     var maxHeight2 = -1;
 
     $('.overzoom').each(function () {
@@ -8,8 +8,6 @@ function changeHeightmakeCenter() {
     $('.overzoom').each(function () {
         $(this).height(maxHeight2);
     });
-
-    $('img').flexVerticalCenter();
 
 }
 
@@ -58,7 +56,8 @@ $(document).scroll(function () {
             }
         }
 
-        changeHeightmakeCenter();
+        changeHeight();
+        $('img').flexVerticalCenter();
 
     }
 );
