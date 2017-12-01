@@ -9,30 +9,27 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
     <meta name="description" content="루다 랜덤짤"/>
-    <meta name="robots" content="index, follow" />
-    <meta name="Keywords" content="루다, luda, 이루다, 우주소녀, 우소" />
-    <meta property="og:description" content="우주소녀 루다 고화질 사진 모음. WJSN LUDA">
-    <title>루다 저장소 - ♥루랑단 대장님 랜덤짤루다가♥</title>
+    <meta name="robots" content="noindex, nofollow"/>
+    <title>[ :: 이루다 :: ]</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/onOverZoom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/top.css' %}">
     <style type="text/css">body {
         text-align: center;
     }
     </style>
 
 </head>
-
-<body>
-<br><br>
+</br></br></br>
 <button type="button" class="btn btn-info" onClick="window.location.reload()">
     <h2>루다 저장소</h2>
 </button>
 
-<br><br><br><br>
-
+</br></br></br></br>
+<a id="MOVE_TOP_BTN" href="#">TOP</a>
 <button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!</button>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 
 <div class="container">
     <div class="row">
@@ -43,6 +40,24 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script defer src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 500) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+
+        $("#MOVE_TOP_BTN").click(function() {
+            $('html, body').animate({
+                scrollTop : 0
+            }, 400);
+            return false;
+        });
+    });
+</script>
 <script>
     var i = 6;
     var arr = {{ my|safe }};
