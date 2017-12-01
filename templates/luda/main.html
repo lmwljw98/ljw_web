@@ -49,7 +49,6 @@
         <br>
     </div>
 </div>
-
 <script>
     $(function () {
         $(window).scroll(function () {
@@ -71,12 +70,18 @@
 <script>
     var i = 6;
     var arr = {{ my|safe }};
-    var gif = [];
-    for (var m=0; m<arr.length; m++){
-        if (arr[m].endswith(".gif")){
-            gif.push(arr[m])
-        }
-    }
+    var gif = {{ my2|safe }};
+    var mode = 0;
+
+    $("#picture").click(function () {
+        $(".row").empty();
+        mode = 0;
+    });
+    $("#gif").click(function () {
+        $(".row").empty();
+        mode = 1;
+    });
+
     $("#reload").after('<br><br>' + arr.length + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
 
     /*
