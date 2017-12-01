@@ -22,7 +22,7 @@ def db(request):
     ret_list = os.listdir("./static/images/")
     ret_list2 = os.listdir("./static/images/gif")
     for i in range(len(ret_list)):
-        q = My(image_name=ret_list2[i])
+        q = My(image_name=ret_list[i])
         q.save()
     for i in range(len(ret_list2)):
         q = My(gif_name=ret_list2[i])
