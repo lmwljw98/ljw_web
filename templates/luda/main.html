@@ -39,7 +39,7 @@
 </button>
 
 </br></br></br></br>
-<a id="MOVE_TOP_BTN" href="#">TOP</a>
+<a style="text-decoration:none;" id="MOVE_TOP_BTN" href="#">TOP</a>
 <button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!</button>
 
 </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
@@ -76,10 +76,17 @@
     $("#picture").click(function () {
         $(".row").empty();
         mode = 0;
+        for (var j = 0; j < 6; j++) {
+            $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+        }
+
     });
     $("#gif").click(function () {
         $(".row").empty();
         mode = 1;
+        for (var j = 0; j < 6; j++) {
+            $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/gif/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+        }
     });
 
     $("#reload").after('<br><br>' + arr.length + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
@@ -106,22 +113,39 @@
 
         if (typeof arr[i] != "undefined") {
             if (maxHeight <= currentScroll + 400) {
+                if (mode == 0) {
 
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 1] + '" download><img src="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 2] + '" download><img src="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 3] + '" download><img src="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 4] + '" download><img src="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 5] + '" download><img src="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 6] + '" download><img src="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 7] + '" download><img src="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 8] + '" download><img src="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 9] + '" download><img src="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 10] + '" download><img src="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 11] + '" download><img src="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 1] + '" download><img src="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 2] + '" download><img src="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 3] + '" download><img src="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 4] + '" download><img src="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 5] + '" download><img src="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 6] + '" download><img src="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 7] + '" download><img src="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 8] + '" download><img src="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 9] + '" download><img src="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 10] + '" download><img src="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 11] + '" download><img src="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
 
-                i += 12;
+                    i += 12;
+                }
+                else{
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 1] + '" download><img src="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 2] + '" download><img src="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 3] + '" download><img src="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 4] + '" download><img src="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 5] + '" download><img src="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 6] + '" download><img src="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 7] + '" download><img src="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 8] + '" download><img src="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 9] + '" download><img src="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 10] + '" download><img src="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[i + 11] + '" download><img src="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
 
+                    i += 12;
+                }
             }
         }
 
