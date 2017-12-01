@@ -6,4 +6,5 @@ nohup.out
 db.sqlite3
 tweet/
 static/images/
+static/gif/
 *.pyc
