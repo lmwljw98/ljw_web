@@ -18,6 +18,7 @@ def test(request):
 
 def db(request):
     My.objects.all().delete()
+    Gmy.objects.all().delete()
     ret_list = os.listdir("./static/images/")
     ret_list2 = os.listdir("./static/gif/")
     for i in range(len(ret_list)):
