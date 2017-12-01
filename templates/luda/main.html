@@ -76,8 +76,8 @@
     var gif = {{ my2|safe }};
     var mode = 0;
 
-    $(".row").click(function () {
-        $("#picture").empty();
+    $("#picture").click(function () {
+        $(".row").empty();
         mode = 0;
         i = 6;
         for (var j = 0; j < 6; j++) {
@@ -85,8 +85,8 @@
         }
     });
 
-    $(".row").click(function () {
-        $("#gif").empty();
+    $("#gif").click(function () {
+        $(".row").empty();
         mode = 1;
         m = 6;
         for (var j = 0; j < 6; j++) {
