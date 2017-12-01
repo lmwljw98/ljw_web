@@ -71,6 +71,7 @@
 
 <script>
     var i = 6;
+    var m = 6;
     var arr = {{ my|safe }};
     var gif = {{ my2|safe }};
     var mode = 0;
@@ -90,7 +91,7 @@
     $("#gif").click(function () {
         $(".row").empty();
         mode = 1;
-        i = 6;
+        m = 6;
         $('html, body').animate({
                 scrollTop: 0
             }, 400);
