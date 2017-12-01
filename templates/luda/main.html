@@ -120,14 +120,15 @@
             var mobile = 0;
         }
     */
+    $(function ()
+    {
+        for (var j = 0; j < 6; j++) {
+            $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+        }
 
-    for (var j = 0; j < 6; j++) {
-        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+        changeHeight();
+        $('img').flexVerticalCenter();
     }
-
-    changeHeight();
-    $('img').flexVerticalCenter();
-
 
 </script>
 </body>
