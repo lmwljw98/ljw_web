@@ -27,13 +27,6 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
         <ul class="nav navbar-nav navbar-left">
             <li><a href="#" id="picture">Pictures :D</a></li>
             <li><a href="#" id="gif">GIFs :)</a></li>
@@ -144,7 +137,7 @@
             var maxHeight = $(document).height();
             var currentScroll = $(window).scrollTop() + $(window).height();
 
-            if (maxHeight <= currentScroll) {
+            if (maxHeight <= currentScroll + 400) {
                 if (mode == 0 && typeof arr[i] != "undefined") {
 
                     $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
