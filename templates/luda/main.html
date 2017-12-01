@@ -38,7 +38,14 @@
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <!--<ul class="nav navbar-nav navbar-left">-->
+            <ul class="nav-collapse collapse">
                 <li><a href="#" id="picture">Pictures :D</a></li>
                 <li><a href="#" id="gif">GIFs :)</a></li>
             </ul>
@@ -46,9 +53,8 @@
     </nav>
 
     </br></br></br>
-    <button type="button" class="btn btn-info" onClick="window.location.reload()">
-        <h2>루다 저장소</h2>
-    </button>
+    <a href="https://twitter.com/_realize_you" style="color: #2aabd2; text-decoration: none; padding: 40px;"
+       target="_blank">twitter: @_realize_you</a>
 
     </br></br></br></br>
     <a class="btn btn-default" style="text-decoration:none;" id="MOVE_TOP_BTN" href="#">TOP</a>
@@ -155,21 +161,6 @@
                             });
                             i++;
                         }
-                        /*
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 1] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive lazy" id="' + i + '" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 2] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 3] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 4] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 5] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 6] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 7] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 8] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 9] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 10] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 11] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive lazy" id="' + i + '"style="width: 100%; height: auto;"></a></div></div>');
-
-                        i += 12;
-                        */
                     }
                     if (mode == 1 && typeof gif[m] != "undefined") {
                         for (var num = 0; num < 12; num++) {
@@ -180,21 +171,6 @@
                             });
                             m++;
                         }
-                        /*
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 1] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 1] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 2] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 2] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 3] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 3] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 4] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 4] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 5] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 5] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 6] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 6] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 7] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 7] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 8] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 8] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 9] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 9] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 10] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 10] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 11] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m + 11] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>');
-
-                        m += 12;
-                        */
                     }
                     changeHeight();
                     $('img').flexVerticalCenter();
