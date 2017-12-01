@@ -1,192 +1,198 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-    {% load static %}
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
-    <link rel="icon" href="{% static 'favicon-16x16.png' %}" sizes="16x16">
-    <link rel="icon" href="{% static 'favicon-32x32.png' %}" sizes="32x32">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
-    <meta name="description" content="루다 랜덤짤"/>
-    <meta name="robots" content="noindex, nofollow"/>
-    <title>[ :: 이루다 :: ]</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/onOverZoom.css' %}">
-    <style>
-        a#MOVE_TOP_BTN {
-            position: fixed;
-            right: 2%;
-            bottom: 50px;
-            display: none;
-            z-index: 999;
+<
+<bod xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        {% load static %}
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+        <link rel="icon" href="{% static 'favicon-16x16.png' %}" sizes="16x16">
+        <link rel="icon" href="{% static 'favicon-32x32.png' %}" sizes="32x32">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+        <meta name="description" content="루다 랜덤짤"/>
+        <meta name="robots" content="noindex, nofollow"/>
+        <title>[ :: 이루다 :: ]</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/onOverZoom.css' %}">
+        <style>
+            a#MOVE_TOP_BTN {
+                position: fixed;
+                right: 2%;
+                bottom: 50px;
+                display: none;
+                z-index: 999;
+            }
+        </style>
+        <style type="text/css">body {
+            text-align: center;
         }
-    </style>
-    <style type="text/css">body {
-        text-align: center;
-    }
-    </style>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    <script defer src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
+        </style>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <script defer src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
 
-</head>
-<body>
+    </head>
+    <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-left">
-            <li><a href="#" id="picture">Pictures :D</a></li>
-            <li><a href="#" id="gif">GIFs :)</a></li>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#" id="picture">Pictures :D</a></li>
+                <li><a href="#" id="gif">GIFs :)</a></li>
+            </ul>
+        </div>
+    </nav>
 
-</br></br></br>
-<button type="button" class="btn btn-info" onClick="window.location.reload()">
-    <h2>루다 저장소</h2>
-</button>
+    </br></br></br>
+    <button type="button" class="btn btn-info" onClick="window.location.reload()">
+        <h2>루다 저장소</h2>
+    </button>
 
-</br></br></br></br>
-<a class="btn btn-default" style="text-decoration:none;" id="MOVE_TOP_BTN" href="#">TOP</a>
-<button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!</button>
+    </br></br></br></br>
+    <a class="btn btn-default" style="text-decoration:none;" id="MOVE_TOP_BTN" href="#">TOP</a>
+    <button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!</button>
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 
-<div class="container">
-    <div class="row">
-        <div id="g">
+    <div class="container">
+        <div class="row">
+            <div id="g">
+                </br>
+            </div>
             </br>
         </div>
-        </br>
     </div>
-</div>
-<script>
+    <script>
 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('#MOVE_TOP_BTN').fadeIn();
-        } else {
-            $('#MOVE_TOP_BTN').fadeOut();
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#MOVE_TOP_BTN').fadeIn();
+            } else {
+                $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+
+        $("#MOVE_TOP_BTN").click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
+
+        function changeHeight() {
+            var maxHeight2 = -1;
+
+            $('.overzoom').each(function () {
+                maxHeight2 = maxHeight2 > $(this).height() ? maxHeight2 : $(this).height();
+            });
+
+            $('.overzoom').each(function () {
+                $(this).height(maxHeight2);
+            });
+
         }
-    });
+    </script>
 
-    $("#MOVE_TOP_BTN").click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 400);
-        return false;
-    });
+    <script>
+        var i = 6;
+        var m = 6;
+        var arr = {{ my|safe }};
+        var gif = {{ my2|safe }};
+        var mode = 0;
 
-    function changeHeight() {
-        var maxHeight2 = -1;
-
-        $('.overzoom').each(function () {
-            maxHeight2 = maxHeight2 > $(this).height() ? maxHeight2 : $(this).height();
+        $("#picture").click(function () {
+            $(".row").empty();
+            mode = 0;
+            i = 6;
+            for (var j = 0; j < 6; j++) {
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+            }
         });
 
-        $('.overzoom').each(function () {
-            $(this).height(maxHeight2);
+        $("#gif").click(function () {
+            $(".row").empty();
+            mode = 1;
+            m = 6;
+            $("#g").show();
+            for (var j = 0; j < 6; j++) {
+                $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[j] + '" download><img src="../static/gif/' + gif[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+            }
         });
 
-    }
-</script>
+        $("#reload").after('<br><br>' + (arr.length + gif.length) + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
 
-<script>
-    var i = 6;
-    var m = 6;
-    var arr = {{ my|safe }};
-    var gif = {{ my2|safe }};
-    var mode = 0;
+        /*
+            //모바일 브라우저 문자열 체크
+            var UserAgent = navigator.userAgent;
+            if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+                var mobile = 1;
+            }
+            else {
+                var mobile = 0;
+            }
+        */
 
-    $("#picture").click(function () {
-        $(".row").empty();
-        mode = 0;
-        i = 6;
         for (var j = 0; j < 6; j++) {
             $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
         }
-    });
-
-    $("#gif").click(function () {
-        $(".row").empty();
-        mode = 1;
-        m = 6;
-        $("#g").show();
         for (var j = 0; j < 6; j++) {
-            $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[j] + '" download><img src="../static/gif/' + gif[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+            $("#g").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[j] + '" download><img src="../static/gif/' + gif[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide();
         }
-    });
-
-    $("#reload").after('<br><br>' + (arr.length + gif.length) + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
-
-    /*
-        //모바일 브라우저 문자열 체크
-        var UserAgent = navigator.userAgent;
-        if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
-            var mobile = 1;
-        }
-        else {
-            var mobile = 0;
-        }
-    */
-
-    for (var j = 0; j < 6; j++) {
-        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-    }
-    for (var j = 0; j < 6; j++) {
-        $("#g").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[j] + '" download><img src="../static/gif/' + gif[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide();
-    }
 
 
-    $(document).scroll(function () {
+        $(document).scroll(function () {
 
-            var maxHeight = $(document).height();
-            var currentScroll = $(window).scrollTop() + $(window).height();
+                var maxHeight = $(document).height();
+                var currentScroll = $(window).scrollTop() + $(window).height();
 
-            if (maxHeight <= currentScroll + 400) {
-                if (mode == 0 && typeof arr[i] != "undefined") {
+                if (maxHeight <= currentScroll + 400) {
+                    if (mode == 0 && typeof arr[i] != "undefined") {
 
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 1] + '" download><img src="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 2] + '" download><img src="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 3] + '" download><img src="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 4] + '" download><img src="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 5] + '" download><img src="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 6] + '" download><img src="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 7] + '" download><img src="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 8] + '" download><img src="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 9] + '" download><img src="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 10] + '" download><img src="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 11] + '" download><img src="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 1] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 1] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 2] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 2] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 3] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 3] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 4] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 4] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 5] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 5] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 6] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 6] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 7] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 7] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 8] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 8] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 9] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 9] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 10] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 10] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i + 11] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i + 11] + '" class="img-rounded img-responsive lazy" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
 
-                    i += 12;
+                        i += 12;
+                        $("img.lazy").lazyload({
+                            effect: "fadeIn"
+                        });
+                    }
+                    if (mode == 1 && typeof gif[m] != "undefined") {
+
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m] + '" download><img src="../static/gif/' + gif[m] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 1] + '" download><img src="../static/gif/' + gif[m + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 2] + '" download><img src="../static/gif/' + gif[m + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 3] + '" download><img src="../static/gif/' + gif[m + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 4] + '" download><img src="../static/gif/' + gif[m + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 5] + '" download><img src="../static/gif/' + gif[m + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 6] + '" download><img src="../static/gif/' + gif[m + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 7] + '" download><img src="../static/gif/' + gif[m + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 8] + '" download><img src="../static/gif/' + gif[m + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 9] + '" download><img src="../static/gif/' + gif[m + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 10] + '" download><img src="../static/gif/' + gif[m + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                        $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 11] + '" download><img src="../static/gif/' + gif[m + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+
+                        m += 12;
+
+                    }
                 }
-                if (mode == 1 && typeof gif[m] != "undefined") {
 
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m] + '" download><img src="../static/gif/' + gif[m] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 1] + '" download><img src="../static/gif/' + gif[m + 1] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 2] + '" download><img src="../static/gif/' + gif[m + 2] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 3] + '" download><img src="../static/gif/' + gif[m + 3] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 4] + '" download><img src="../static/gif/' + gif[m + 4] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 5] + '" download><img src="../static/gif/' + gif[m + 5] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 6] + '" download><img src="../static/gif/' + gif[m + 6] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 7] + '" download><img src="../static/gif/' + gif[m + 7] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 8] + '" download><img src="../static/gif/' + gif[m + 8] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 9] + '" download><img src="../static/gif/' + gif[m + 9] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 10] + '" download><img src="../static/gif/' + gif[m + 10] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m + 11] + '" download><img src="../static/gif/' + gif[m + 11] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
+                changeHeight();
+                $('img').flexVerticalCenter();
 
-                    m += 12;
-
-                }
             }
-
-            changeHeight();
-            $('img').flexVerticalCenter();
-
-        }
-    );
-</script>
-</body>
-</html>
+        );
+    </script>
+    </body>
+    </html>
