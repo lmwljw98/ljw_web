@@ -17,7 +17,7 @@ $(document).scroll(function () {
         var currentScroll = $(window).scrollTop() + $(window).height();
 
 
-        if (maxHeight <= currentScroll + 400) {
+        if (maxHeight <= currentScroll + 70) {
             if (mode == 0) {
                 if (typeof arr[i] != "undefined") {
                     $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/images/' + arr[i] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
