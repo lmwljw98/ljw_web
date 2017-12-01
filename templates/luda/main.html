@@ -152,6 +152,8 @@
 
 
     $(document).scroll(function () {
+            changeHeight();
+            $('img').flexVerticalCenter();
 
             var maxHeight = $(document).height();
             var currentScroll = $(window).scrollTop() + $(window).height();
@@ -165,8 +167,7 @@
                             effectTime: 2000
                         });
                         i++;
-                        changeHeight();
-                        $('img').flexVerticalCenter();
+
                     }
                 }
                 if (mode == 1 && typeof gif[m] != "undefined") {
@@ -177,11 +178,9 @@
                             effectTime: 2000
                         });
                         m++;
-                        changeHeight();
-                        $('img').flexVerticalCenter();
+
                     }
                 }
-
             }
         }
     );
