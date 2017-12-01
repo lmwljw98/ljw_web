@@ -21,6 +21,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
     <script defer src="{% static 'js/jquery.flexverticalcenter.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app.js' %}"></script>
 </head>
 <body>
 
@@ -67,7 +68,7 @@
         });
     });
 </script>
-<script type="text/javascript" src="{% static 'app.js' %}"></script>
+
 <script>
     var i = 6;
     var arr = {{ my|safe }};
@@ -90,7 +91,7 @@
         }
     });
 
-    $("#reload").after('<br><br>' + arr.length + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
+    $("#reload").after('<br><br>' + (arr.length + gif.length) + '장의 대장님<br><br>사진을 클릭하면 다운로드 됩니다.');
 
     /*
         //모바일 브라우저 문자열 체크
