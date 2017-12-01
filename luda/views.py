@@ -1,14 +1,14 @@
 from django.shortcuts import render
 import os
 import random
-from luda.models import My
+from luda.models import My, Gmy
 
 
 # Create your views here.
 
 def test(request):
     entry_list = list(My.objects.values_list('image_name', flat=True))
-    entry_list2 = list(My.objects.values_list('gif_name', flat=True))
+    entry_list2 = list(Gmy.objects.values_list('gif_name', flat=True))
     # for i in range(len(entry_list)):
     #    entry_list[i] = entry_list[i].replace("&#39;", "'")
     random.shuffle(entry_list)
@@ -24,6 +24,6 @@ def db(request):
         q = My(image_name=ret_list[i])
         q.save()
     for i in range(len(ret_list2)):
-        q = My(gif_name=ret_list2[i])
+        q = Gmy(gif_name=ret_list2[i])
         q.save()
     return render(request, 'luda/main.html')
