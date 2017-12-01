@@ -20,7 +20,21 @@
                 right: 2%;
                 bottom: 50px;
                 display: none;
-                z-index: 999;
+                z-index: 9999;
+            }
+
+            a#picture {
+                position: fixed;
+                left: 2%;
+                top: 50px;
+                z-index: 9998;
+            }
+
+            a#gif {
+                position: fixed;
+                left: 2%;
+                top: 50px;
+                z-index: 9997;
             }
         </style>
         <style type="text/css">body {
@@ -35,36 +49,20 @@
 
     </head>
     <body>
-    <!--
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar">
-                -->
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-
-            <!--<ul class="nav navbar-nav navbar-left">-->
-            <ul class="nav-collapse collapse">
-                <li><a href="#" id="picture">Pictures :D</a></li>
-                <li><a href="#" id="gif">GIFs :)</a></li>
-            </ul>
-        </div>
-    </div>
+    <a class="btn btn-info" href="#" style="text-decoration:none;" id="picture">Pictures :D</a>
+    <a class="btn btn-info" href="#" style="text-decoration:none;" id="gif">GIFs :)</a>
 
     </br></br></br>
-    <a href="https://twitter.com/_realize_you" style="color: #2aabd2; text-decoration: none; padding: 40px;"
+    <a href="https://twitter.com/_realize_you" style="color: #2aabd2; text-decoration: none; padding: 80px;"
        target="_blank">twitter: @_realize_you</a>
 
     </br></br></br></br>
     <a class="btn btn-default" style="text-decoration:none;" id="MOVE_TOP_BTN" href="#">TOP</a>
-    <button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!</button>
 
-    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+    <button type="button" class="btn btn-primary" id="reload" onClick="window.location.reload()">Reload!
+    </button>
+
+    </br></br></br></br></br></br></br></br></br></br></br>
 
     <div class="container">
         <div class="row">
