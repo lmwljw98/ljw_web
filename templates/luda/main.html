@@ -160,7 +160,7 @@
 
             if (maxHeight <= currentScroll + 400) {
                 if (mode == 0 && typeof arr[i] != "undefined") {
-                    for (var num = 0; num < 12; num++) {
+                    //for (var num = 0; num < 12; num++) {
                         $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i] + '" class="img-rounded img-responsive lazy" id="' + i + '" style="width: 100%; height: auto;"></a></div></div>');
                         $("img.lazy#" + i).lazyload({
                             effect: "fadeIn",
@@ -168,7 +168,7 @@
                         });
                         i++;
 
-                    }
+                   // }
                 }
                 if (mode == 1 && typeof gif[m] != "undefined") {
                     for (var num = 0; num < 12; num++) {
