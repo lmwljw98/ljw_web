@@ -42,6 +42,7 @@ urlpatterns = [
     url(r'^vod/keyboard/', vod.text, name='text'),
     url(r'^vod/message', vod.message, name='message'),
     url(r'^luda/db/', luda.views.db, name='db'),
+    url(r'^luda/gif/', luda.views.gif, name='gif'),
     url(r'^', include('luda.urls'), name='luda'),
     url(r'^admin/', include(admin.site.urls)),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,

@@ -23,6 +23,10 @@ def db(request):
         q = My(image_name=ret_list[i])
         q.save()
 
+    return render(request, 'luda/main.html')
+
+
+def gif(request):
     Gmy.objects.all().delete()
     ret_list2 = os.listdir("./static/gif/")
     for i in range(len(ret_list2)):
