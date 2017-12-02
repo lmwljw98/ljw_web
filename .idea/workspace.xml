@@ -64,8 +64,8 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/luda/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="170" column="23" lean-forward="true" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
+            <state relative-caret-position="518">
+              <caret line="164" column="52" lean-forward="false" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -1165,8 +1165,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/luda/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="170" column="23" lean-forward="true" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
+        <state relative-caret-position="518">
+          <caret line="164" column="52" lean-forward="false" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
           <folding />
         </state>
       </provider>
