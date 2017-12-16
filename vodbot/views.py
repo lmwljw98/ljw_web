@@ -46,7 +46,7 @@ def searchMediaCode(name, page_):
             final_url.append(temp[j] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
 
         except:
-            final_url.append("Link not found.")
+            final_url.append(temp[j] + "\nLink not found.")
             continue
 
     return final_url
@@ -75,22 +75,24 @@ def message(request):
         return JsonResponse(
             {
                 'message': {
-                    'text':
-                        "\n\n".join(searchMediaCode(search, page))
+                    'text': "\n\n".join(searchMediaCode(search, page))
                 },
                 'keyboard': {
                     'type': 'buttons',
-                    'buttons': ['더 보기', '다른 키워드로 검색']
+                    'buttons': ['더 보기', '다시 검색']
                 }
             }
         )
-    
-    elif name == '다른 키워드로 검색':
+
+    elif name == '다시 검색':
         return JsonResponse(
-
             {
-                'type': 'text',
-
+                'message': {
+                    'text': '다른 키워드로 다시 검색합니다.'
+                },
+                'keyboard': {
+                    'type': 'text'
+                }
             }
         )
 
@@ -105,7 +107,7 @@ def message(request):
                 },
                 'keyboard': {
                     'type': 'buttons',
-                    'buttons': ['더 보기', '다른 키워드로 검색']
+                    'buttons': ['더 보기', '다시 검색']
                 }
             }
         )
