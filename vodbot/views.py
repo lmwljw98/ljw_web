@@ -36,12 +36,18 @@ def searchMediaCode(name, page_):
         s = requests.Session()
         programCode_request = s.get('https://api.tving.com/v1/media/stream/info', params=second_params,
                                     proxies={"https": "https://211.58.248.163:3128"})
+
         programCode = json.loads(programCode_request.text)
 
-        realCode = programCode['body']['content']['info']['program']['enm_code']
-        fre_number = mediaFre_list[j]
+        try:
+            realCode = programCode['body']['content']['info']['program']['enm_code']
+            fre_number = mediaFre_list[j]
 
-        final_url.append(temp[j] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
+            final_url.append(temp[j] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
+
+        except:
+            final_url.append("Link not found.")
+            continue
 
     return final_url
 
@@ -78,16 +84,16 @@ def message(request):
                 }
             }
         )
+    
     elif name == '다른 키워드로 검색':
-        page = 1
         return JsonResponse(
 
             {
-                'keyboard': {
-                    'type': 'text'
-                }
+                'type': 'text',
+
             }
         )
+
     else:
         page = 1
         search = name
