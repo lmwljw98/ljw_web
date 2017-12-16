@@ -15,38 +15,35 @@ proxies = {
 
 
 def searchMediaCode(name):
-    try:
-        keyword = name
-        mediaCode_list.clear()
-        mediaFre_list.clear()
+    keyword = name
+    mediaCode_list.clear()
+    mediaFre_list.clear()
+    temp.clear()
 
-        params = {'kwd': keyword, 'pageSize': 50}
-        mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params,
-                                         proxies=proxies)
-        mediaCode = json.loads(mediaCode_request.text)
+    params = {'kwd': keyword, 'pageSize': 50}
+    mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params,
+                                     proxies=proxies)
+    mediaCode = json.loads(mediaCode_request.text)
 
-        for i in range(len(mediaCode['vodBCRsb']['dataList'])):
-            temp.append(
-                mediaCode['vodBCRsb']['dataList'][i]['mast_nm'].replace("#@$", "").replace("$#@", "") + " "
-                + mediaCode['vodBCRsb']['dataList'][i]['frequency'] + "화")
-            mediaCode_list.append(mediaCode['vodBCRsb']['dataList'][i]['epi_cd'])
-            mediaFre_list.append(mediaCode['vodBCRsb']['dataList'][i]['frequency'])
+    for i in range(len(mediaCode['vodBCRsb']['dataList'])):
+        temp.append(
+            mediaCode['vodBCRsb']['dataList'][i]['mast_nm'].replace("#@$", "").replace("$#@", "") + " "
+            + mediaCode['vodBCRsb']['dataList'][i]['frequency'] + "화")
+        mediaCode_list.append(mediaCode['vodBCRsb']['dataList'][i]['epi_cd'])
+        mediaFre_list.append(mediaCode['vodBCRsb']['dataList'][i]['frequency'])
 
-        for j in range(len(mediaCode_list)):
-            second_params = {'mediaCode': mediaCode_list[j], 'info': 'Y'}
-            programCode_request = requests.get('http://api.tving.com/v1/media/stream/info', params=second_params,
-                                               proxies=proxies)
-            programCode = json.loads(programCode_request.text)
+    for j in range(len(mediaCode_list)):
+        second_params = {'mediaCode': mediaCode_list[j], 'info': 'Y'}
+        programCode_request = requests.get('http://api.tving.com/v1/media/stream/info', params=second_params,
+                                           proxies=proxies)
+        programCode = json.loads(programCode_request.text)
 
-            realCode = programCode['body']['content']['info']['program']['enm_code']
-            fre_number = mediaFre_list[j]
+        realCode = programCode['body']['content']['info']['program']['enm_code']
+        fre_number = mediaFre_list[j]
 
-            final_url.append(temp[i] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
+        final_url.append(temp[i] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
 
-        return final_url
-
-    except:
-        return "Error"
+    return final_url
 
 
 def text(request):
