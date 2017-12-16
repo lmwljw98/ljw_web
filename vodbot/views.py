@@ -31,7 +31,7 @@ def searchMediaCode(name):
         second_params = {'mediaCode': mediaCode_list[j], 'info': 'Y'}
         s = requests.Session()
         programCode_request = s.get('http://api.tving.com/v1/media/stream/info', params=second_params,
-                                    proxies={"http": "http://14.52.23.216:8080"})
+                                    proxies={"https": "https://211.58.248.163:3128"})
         programCode = json.loads(programCode_request.text)
 
         realCode = programCode['body']['content']['info']['program']['enm_code']
