@@ -72,7 +72,7 @@ def message(request):
         return JsonResponse(
             {
                 'message': {
-                    'text': str(page) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
+                    'text': str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
                 },
                 'keyboard': {
                     'type': 'buttons',
