@@ -16,7 +16,7 @@ def searchMediaCode(name):
     mediaFre_list.clear()
     temp.clear()
 
-    params = {'kwd': keyword, 'pageSize': 50}
+    params = {'kwd': keyword, 'pageSize': 20}
     mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params)
     mediaCode = json.loads(mediaCode_request.text)
 
