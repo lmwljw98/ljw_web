@@ -85,6 +85,8 @@ def message(request):
         )
 
     elif name == '다시 검색':
+        page = 1
+        search = ''
         return JsonResponse(
             {
                 'message': {
