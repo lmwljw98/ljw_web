@@ -8,7 +8,8 @@ temp = []
 mediaCode_list = []
 mediaFre_list = []
 base_url = "http://cjpiporigin.myskcdn.com/VOD/"
-page = 1
+page = 12
+
 
 def searchMediaCode(name, page_):
     keyword = name
@@ -18,7 +19,8 @@ def searchMediaCode(name, page_):
     final_url.clear()
 
     params = {'kwd': keyword, 'pageNum': page_, 'pageSize': 12}
-    mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params)
+    mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params,
+                                     proxies={"https": "https://211.58.248.163:3128"})
     mediaCode = json.loads(mediaCode_request.text)
 
     for i in range(len(mediaCode['vodBCRsb']['dataList'])):
@@ -40,7 +42,7 @@ def searchMediaCode(name, page_):
 
         final_url.append(temp[j] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
 
-    return final_url
+    return final_url[page_ - 12: page_]
 
 
 def text(request):
@@ -60,7 +62,7 @@ def message(request):
     name = received['content']
     global page
 
-    if name == '더보기':
+    if name == '더 보기':
         page += 1
         return JsonResponse(
             {
@@ -74,7 +76,7 @@ def message(request):
                 }
             }
         )
-    elif name == '다시검색':
+    elif name == '다른 키워드로 검색':
         page = 1
         return JsonResponse(
 
@@ -92,7 +94,7 @@ def message(request):
                 },
                 'keyboard': {
                     'type': 'buttons',
-                    'buttons': ['더보기', '다시검색']
+                    'buttons': ['더 보기', '다른 키워드로 검색']
                 }
             }
         )
