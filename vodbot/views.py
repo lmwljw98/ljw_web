@@ -67,23 +67,7 @@ def message(request):
     received = json.loads(user_request)
     name = received['content']
 
-    if name == '더 보기':
-        search['page'] += 1
-        return JsonResponse(
-            {
-                'message': {
-                    'text':
-                        str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
-                },
-                'keyboard': {
-                    'type': 'buttons',
-                    'buttons': ['더 보기', '다시 검색']
-                }
-            }
-        )
-
-    elif name == '다시 검색':
-        search.clear()
+    if name == '다시 검색':
         return JsonResponse(
             {
                 'message': {
@@ -96,17 +80,20 @@ def message(request):
         )
 
     else:
-        search['name'] = name
-        search['page'] = 1
+        if name not in search:
+            search[name] = 1
+        else:
+            search[name] += 1
+
         return JsonResponse(
             {
                 'message': {
                     'text':
-                        str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
+                        str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(name, search[name]))
                 },
                 'keyboard': {
                     'type': 'buttons',
-                    'buttons': ['더 보기', '다시 검색']
+                    'buttons': [name, '다시 검색']
                 }
             }
         )
