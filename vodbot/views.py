@@ -8,7 +8,7 @@ temp = []
 mediaCode_list = []
 mediaFre_list = []
 base_url = "http://cjpiporigin.myskcdn.com/VOD/"
-page = 12
+page = 1
 
 
 def searchMediaCode(name, page_):
@@ -41,7 +41,7 @@ def searchMediaCode(name, page_):
 
         final_url.append(temp[j] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
 
-    return final_url[page_ - 12: page_]
+    return final_url
 
 
 def text(request):
