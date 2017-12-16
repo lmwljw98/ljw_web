@@ -10,15 +10,19 @@ mediaFre_list = []
 base_url = "http://cjpiporigin.myskcdn.com/VOD/"
 page = 1
 
+search = ''
+
 
 def searchMediaCode(name, page_):
     keyword = name
+    global search
+    search = keyword
     mediaCode_list.clear()
     mediaFre_list.clear()
     temp.clear()
     final_url.clear()
 
-    params = {'kwd': keyword, 'pageNum': page_, 'pageSize': 12}
+    params = {'kwd': keyword, 'pageNum': page_, 'pageSize': 10}
     mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params)
     mediaCode = json.loads(mediaCode_request.text)
 
@@ -60,6 +64,7 @@ def message(request):
     received = json.loads(user_request)
     name = received['content']
     global page
+    global search
 
     if name == '더 보기':
         page += 1
@@ -67,7 +72,7 @@ def message(request):
             {
                 'message': {
                     'text':
-                        "\n\n".join(searchMediaCode(name, page))
+                        "\n\n".join(searchMediaCode(search, page))
                 },
                 'keyboard': {
                     'type': 'buttons',
