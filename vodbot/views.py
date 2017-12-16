@@ -15,8 +15,6 @@ search = ''
 
 def searchMediaCode(name, page_):
     keyword = name
-    global search
-    search = keyword
     mediaCode_list.clear()
     mediaFre_list.clear()
     temp.clear()
@@ -85,11 +83,14 @@ def message(request):
         return JsonResponse(
 
             {
-                'type': 'text',
+                'keyboard': {
+                    'type': 'text'
+                }
             }
         )
     else:
         page = 1
+        search = name
         return JsonResponse(
             {
                 'message': {
