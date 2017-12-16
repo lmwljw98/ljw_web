@@ -67,10 +67,10 @@ def message(request):
     user_request = ((request.body).decode('utf-8'))
     received = json.loads(user_request)
     name = received['content']
-    global page
-    global search
 
     if name == '더 보기':
+        global page
+        global search
         page += 1
         return JsonResponse(
             {
@@ -85,6 +85,8 @@ def message(request):
         )
 
     elif name == '다시 검색':
+        global page
+        global search
         page = 1
         search = ''
         return JsonResponse(
@@ -99,6 +101,8 @@ def message(request):
         )
 
     else:
+        global page
+        global search
         page = 1
         search = name
         return JsonResponse(
