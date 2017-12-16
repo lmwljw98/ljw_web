@@ -4,6 +4,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
 final_url = []
+temp = []
+mediaCode_list = []
+mediaFre_list = []
 base_url = "http://cjpiporigin.myskcdn.com/VOD/"
 
 proxies = {
@@ -14,27 +17,33 @@ proxies = {
 def searchMediaCode(name):
     try:
         keyword = name
-        final_url.clear()
+        mediaCode_list.clear()
+        mediaFre_list.clear()
 
-        params = {'kwd': keyword, 'pageSize': 1000}
+        params = {'kwd': keyword, 'pageSize': 50}
         mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params,
                                          proxies=proxies)
         mediaCode = json.loads(mediaCode_request.text)
 
         for i in range(len(mediaCode['vodBCRsb']['dataList'])):
-            second_params = {'mediaCode': mediaCode['vodBCRsb']['dataList'][i]['epi_cd'], 'info': 'Y'}
+            temp.append(
+                mediaCode['vodBCRsb']['dataList'][i]['mast_nm'].replace("#@$", "").replace("$#@", "") + " "
+                + mediaCode['vodBCRsb']['dataList'][i]['frequency'] + "화")
+            mediaCode_list.append(mediaCode['vodBCRsb']['dataList'][i]['epi_cd'])
+            mediaFre_list.append(mediaCode['vodBCRsb']['dataList'][i]['frequency'])
+
+        for j in range(len(mediaCode_list)):
+            second_params = {'mediaCode': mediaCode_list[j], 'info': 'Y'}
             programCode_request = requests.get('http://api.tving.com/v1/media/stream/info', params=second_params,
                                                proxies=proxies)
             programCode = json.loads(programCode_request.text)
 
             realCode = programCode['body']['content']['info']['program']['enm_code']
-            fre_number = mediaCode['vodBCRsb']['dataList'][i]['frequency']
+            fre_number = mediaFre_list[j]
 
-            final_url.append(mediaCode['vodBCRsb']['dataList'][i]['mast_nm'].replace("#@$", "").replace("$#@", "") + " "
-                             + mediaCode['vodBCRsb']['dataList'][i][
-                                 'frequency'] + "화\n" + base_url + realCode + "/" + realCode +
-                             "_" + fre_number + ".mp4")
-            return final_url
+            final_url.append(temp[i] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
+
+        return final_url
 
     except:
         return "Error"
