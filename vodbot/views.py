@@ -8,9 +8,8 @@ temp = []
 mediaCode_list = []
 mediaFre_list = []
 base_url = "http://cjpiporigin.myskcdn.com/VOD/"
-page = 1
 
-search = ''
+search = {}
 
 
 def searchMediaCode(name, page_):
@@ -69,13 +68,11 @@ def message(request):
     name = received['content']
 
     if name == '더 보기':
-        global page
-        global search
-        page += 1
+        search['page'] += 1
         return JsonResponse(
             {
                 'message': {
-                    'text': str(page) + "page\n" + "\n\n".join(searchMediaCode(search, page))
+                    'text': str(page) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
                 },
                 'keyboard': {
                     'type': 'buttons',
@@ -85,10 +82,8 @@ def message(request):
         )
 
     elif name == '다시 검색':
-        global page
-        global search
-        page = 1
-        search = ''
+        search['name'] = ''
+        search['page'] = 1
         return JsonResponse(
             {
                 'message': {
@@ -101,15 +96,13 @@ def message(request):
         )
 
     else:
-        global page
-        global search
-        page = 1
-        search = name
+        search['name'] = name
+        search['page'] = 1
         return JsonResponse(
             {
                 'message': {
                     'text':
-                        str(page) + "page\n" + "\n\n".join(searchMediaCode(name, page))
+                        str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
                 },
                 'keyboard': {
                     'type': 'buttons',
