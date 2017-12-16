@@ -68,6 +68,7 @@ def message(request):
     name = received['content']
 
     if name == '다시 검색':
+        search.clear()
         return JsonResponse(
             {
                 'message': {
