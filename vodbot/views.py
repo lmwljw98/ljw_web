@@ -8,15 +8,16 @@ temp = []
 mediaCode_list = []
 mediaFre_list = []
 base_url = "http://cjpiporigin.myskcdn.com/VOD/"
+page = 1
 
-
-def searchMediaCode(name):
+def searchMediaCode(name, page_):
     keyword = name
     mediaCode_list.clear()
     mediaFre_list.clear()
     temp.clear()
+    final_url.clear()
 
-    params = {'kwd': keyword, 'pageSize': 20}
+    params = {'kwd': keyword, 'pageNum': page_, 'pageSize': 12}
     mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params)
     mediaCode = json.loads(mediaCode_request.text)
 
@@ -37,7 +38,7 @@ def searchMediaCode(name):
         realCode = programCode['body']['content']['info']['program']['enm_code']
         fre_number = mediaFre_list[j]
 
-        final_url.append(temp[i] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
+        final_url.append(temp[j] + "\n" + base_url + realCode + "/" + realCode + "_" + fre_number + ".mp4")
 
     return final_url
 
@@ -57,15 +58,41 @@ def message(request):
     user_request = ((request.body).decode('utf-8'))
     received = json.loads(user_request)
     name = received['content']
+    global page
 
-    return JsonResponse(
-        {
-            'message': {
-                'text':
-                    "\n\n".join(searchMediaCode(name))
-            },
-            'keyboard': {
-                'type': 'text'
+    if name == '더 보기':
+        page += 1
+        return JsonResponse(
+            {
+                'message': {
+                    'text':
+                        "\n\n".join(searchMediaCode(name, page))
+                },
+                'keyboard': {
+                    'type': 'buttons',
+                    'buttons': ['더 보기', '다른 키워드로 검색']
+                }
             }
-        }
-    )
+        )
+    elif name == '다른 키워드로 검색':
+        page = 1
+        return JsonResponse(
+
+            {
+                'type': 'text',
+            }
+        )
+    else:
+        page = 1
+        return JsonResponse(
+            {
+                'message': {
+                    'text':
+                        "\n\n".join(searchMediaCode(name, page))
+                },
+                'keyboard': {
+                    'type': 'buttons',
+                    'buttons': ['더 보기', '다른 키워드로 검색']
+                }
+            }
+        )
