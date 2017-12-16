@@ -49,7 +49,6 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="#" id="picture"><span class="glyphicon glyphicon-heart"></span> Gallery :D</a></li>
-                <li><a href="#" id="gif"><span class="glyphicon glyphicon-heart"></span> GIFs :)</a></li>
                 <li><a href="#" onClick="window.location.reload()"><span class="glyphicon glyphicon-refresh"></span>
                     Reload !</a></li>
             </ul>
@@ -106,49 +105,23 @@
 
 <script>
     var i = 6;
-    var m = 6;
     var arr = {{ my|safe }};
     var gif = {{ my2|safe }};
-    var mode = 0;
 
     $("#picture").click(function () {
         $(".row").empty();
-        mode = 0;
         i = 6;
         for (var j = 0; j < 6; j++) {
             $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
         }
     });
 
-    $("#gif").click(function () {
-        $(".row").empty();
-        mode = 1;
-        m = 6;
-        $("#g").show();
-        for (var j = 0; j < 6; j++) {
-            $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[j] + '" download><img src="../static/gif/' + gif[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
-        }
-    });
-
     $("#mine").after('<br><br>' + (arr.length + gif.length) + ' pics and gifs<br><br>사진을 클릭하면 다운로드 됩니다.');
-
-    /*
-        //모바일 브라우저 문자열 체크
-        var UserAgent = navigator.userAgent;
-        if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
-            var mobile = 1;
-        }
-        else {
-            var mobile = 0;
-        }
-    */
 
     for (var j = 0; j < 6; j++) {
         $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[j] + '" download><img src="../static/images/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
     }
-    for (var j = 0; j < 6; j++) {
-        $("#g").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[j] + '" download><img src="../static/gif/' + gif[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide();
-    }
+
 
 
     $(document).scroll(function () {
@@ -159,17 +132,13 @@
             var currentScroll = $(window).scrollTop() + $(window).height();
 
             if (maxHeight <= currentScroll + 400) {
-                if (mode == 0 && typeof arr[i] != "undefined") {
+                if (typeof arr[i] != "undefined") {
                     $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/images/' + arr[i] + '" download><img src="../static/css/loading.gif" data-original="../static/images/' + arr[i] + '" class="img-rounded img-responsive lazy" id="' + i + '" style="width: 100%; height: auto;"></a></div></div>');
                     $("img.lazy#" + i).lazyload();
                     i++;
 
                 }
-                if (mode == 1 && typeof gif[m] != "undefined") {
-                    $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + gif[m] + '" download><img src="../static/css/loading.gif" data-original="../static/gif/' + gif[m] + '" class="img-rounded img-responsive lazy" id="' + m + '" style="width: 100%; height: auto;"></a></div></div>');
-                    $("img.lazy#" + m).lazyload();
-                    m++;
-                }
+
             }
         }
     );
