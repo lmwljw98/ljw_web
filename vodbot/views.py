@@ -60,7 +60,7 @@ def message(request):
     name = received['content']
     global page
 
-    if name == '더 보기':
+    if name == '더보기':
         page += 1
         return JsonResponse(
             {
@@ -74,7 +74,7 @@ def message(request):
                 }
             }
         )
-    elif name == '다른 키워드로 검색':
+    elif name == '다시검색':
         page = 1
         return JsonResponse(
 
@@ -92,7 +92,7 @@ def message(request):
                 },
                 'keyboard': {
                     'type': 'buttons',
-                    'buttons': ['더 보기', '다른 키워드로 검색']
+                    'buttons': ['더보기', '다시검색']
                 }
             }
         )
