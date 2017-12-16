@@ -19,8 +19,7 @@ def searchMediaCode(name, page_):
     final_url.clear()
 
     params = {'kwd': keyword, 'pageNum': page_, 'pageSize': 12}
-    mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params,
-                                     proxies={"https": "https://211.58.248.163:3128"})
+    mediaCode_request = requests.get('http://search.tving.com:8080/search/getFind.jsp', params=params)
     mediaCode = json.loads(mediaCode_request.text)
 
     for i in range(len(mediaCode['vodBCRsb']['dataList'])):
