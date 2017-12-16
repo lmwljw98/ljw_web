@@ -34,6 +34,7 @@ def searchMediaCode(name):
                              + mediaCode['vodBCRsb']['dataList'][i][
                                  'frequency'] + "화\n" + base_url + realCode + "/" + realCode +
                              "_" + fre_number + ".mp4")
+            return final_url
 
     except:
         return "Error"
@@ -55,13 +56,11 @@ def message(request):
     received = json.loads(user_request)
     name = received['content']
 
-    searchMediaCode(name)
-
     return JsonResponse(
         {
             'message': {
                 'text':
-                    "\n".join(final_url)
+                    "\n\n".join(searchMediaCode(name))
             },
             'keyboard': {
                 'type': 'text'
