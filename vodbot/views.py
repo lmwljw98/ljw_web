@@ -22,7 +22,6 @@ def searchMediaCode(name):
         mediaCode = json.loads(mediaCode_request.text)
 
         for i in range(len(mediaCode['vodBCRsb']['dataList'])):
-
             second_params = {'mediaCode': mediaCode['vodBCRsb']['dataList'][i]['epi_cd'], 'info': 'Y'}
             programCode_request = requests.get('http://api.tving.com/v1/media/stream/info', params=second_params,
                                                proxies=proxies)
@@ -32,11 +31,22 @@ def searchMediaCode(name):
             fre_number = mediaCode['vodBCRsb']['dataList'][i]['frequency']
 
             final_url.append(mediaCode['vodBCRsb']['dataList'][i]['mast_nm'].replace("#@$", "").replace("$#@", "") + " "
-                + mediaCode['vodBCRsb']['dataList'][i]['frequency'] + "화\n" + base_url + realCode + "/" + realCode +
+                             + mediaCode['vodBCRsb']['dataList'][i][
+                                 'frequency'] + "화\n" + base_url + realCode + "/" + realCode +
                              "_" + fre_number + ".mp4")
 
     except:
         return "Error"
+
+
+def text(request):
+    return JsonResponse(
+
+        {
+            'type': 'text',
+
+        }
+    )
 
 
 @csrf_exempt
