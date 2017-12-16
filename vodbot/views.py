@@ -72,7 +72,8 @@ def message(request):
         return JsonResponse(
             {
                 'message': {
-                    'text': str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
+                    'text':
+                        str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(search['name'], search['page']))
                 },
                 'keyboard': {
                     'type': 'buttons',
@@ -82,8 +83,7 @@ def message(request):
         )
 
     elif name == '다시 검색':
-        search['name'] = ''
-        search['page'] = 1
+        search.clear()
         return JsonResponse(
             {
                 'message': {
