@@ -89,7 +89,7 @@ def message(request):
             {
                 'message': {
                     'text':
-                        str(search['page']) + "page\n" + "\n\n".join(searchMediaCode(name, search[name]))
+                        str(search[name]) + " Page\n\n" + "\n\n".join(searchMediaCode(name, search[name]))
                 },
                 'keyboard': {
                     'type': 'buttons',
