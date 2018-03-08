@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://twitter.com/_realize_you">realize you</a>
+            <a class="navbar-brand" href="http://lee.luda.tk">이루다 움짤 저장소</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -58,8 +58,8 @@
 </nav>
 
 <br><br><br><br><br><br>
-<a id="mine" href="https://twitter.com/_realize_you" style="color: #2aabd2; text-decoration: none;" target="_blank">
-    twitter: @_realize_you</a>
+<a id="mine" href="https://github.com/lmwljw98" style="color: #2aabd2; text-decoration: none;" target="_blank">
+    github: @lmwljw98</a>
 
 <br><br><br><br>
 <a class="btn btn-default" style="text-decoration:none;" id="MOVE_TOP_BTN" href="#">TOP</a>
@@ -115,7 +115,7 @@
         }
     });
 
-    $("#mine").after('<br><br>' + (arr.length) + ' pics and gifs<br><br>사진을 클릭하면 다운로드 됩니다.');
+    $("#mine").after('<br><br>' + (arr.length) + ' gifs<br><br>사진을 클릭하면 다운로드 됩니다.');
 
     for (var j = 0; j < 6; j++) {
         $(".row").append('<div class="col-md-4"><div class="overzoom" style="width:100%; float:left; padding:23px;"><a href="../static/gif/' + arr[j] + '" download><img src="../static/gif/' + arr[j] + '" class="img-rounded img-responsive" style="width: 100%; height: auto;"></a></div></div>').children(':last').hide().fadeIn(2000);
